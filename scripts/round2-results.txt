@@ -1,0 +1,15 @@
+Processing: Narrow-Leaf Echinacea
+  OK: https://i.ibb.co/whyKsDjX/narrow-leaf-echinacea.jpg
+Processing: Lobelia
+  OK: https://i.ibb.co/fGxWMfmS/lobelia.jpg
+Processing: Mtn. Mint, Hoary
+  Error: ImgBB failed
+Processing: Sunflower, Early
+  Error: ImgBB failed
+Processing: Milkweed, Tall Green
+  Error: ImgBB failed
+Processing: Milkweed, Redring
+  Error: ImgBB failed
+Processing: Hairy Woodmint
+  Error: ImgBB failed
+Done!

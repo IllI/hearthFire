@@ -1,0 +1,138 @@
+import googleCalendar from '../../../../lib/google-calendar';
+import { supabaseAdmin } from '../../../../lib/supabase-admin';
+import { scheduleFromRow, scheduleToRow } from '../../../../lib/supabase-mappers';
+import { verifyAdminAccess } from '../../../../lib/admin-auth';
+
+async function requireAdmin(req, res) {
+  const auth = await verifyAdminAccess(req, res);
+  if (!auth.isAuthenticated) {
+    res.status(401).json({ error: 'Unauthorized' });
+    return false;
+  }
+  if (!auth.isAdmin) {
+    res.status(403).json({ error: 'Forbidden: Admin access required' });
+    return false;
+  }
+  return true;
+}
+
+export default async function handler(req, res) {
+  const { id } = req.query;
+  if (!id) return res.status(400).json({ error: 'Schedule ID is required' });
+
+  if (req.method === 'GET') {
+    try {
+      const { data, error } = await supabaseAdmin
+        .from('delivery_schedules')
+        .select('*')
+        .eq('id', id)
+        .single();
+
+      if (error || !data) return res.status(404).json({ error: 'Schedule not found' });
+      return res.status(200).json(scheduleFromRow(data));
+    } catch (error) {
+      console.error('Error fetching schedule from Supabase:', error);
+      return res.status(500).json({ error: 'Failed to fetch schedule' });
+    }
+  }
+
+  if (req.method === 'PUT') {
+    if (!(await requireAdmin(req, res))) return;
+
+    try {
+      const { data: existingRow, error: fetchError } = await supabaseAdmin
+        .from('delivery_schedules')
+        .select('*')
+        .eq('id', id)
+        .single();
+
+      if (fetchError || !existingRow) {
+        return res.status(404).json({ success: false, message: 'Delivery schedule not found' });
+      }
+
+      const existingSchedule = scheduleFromRow(existingRow);
+      const nextSchedule = {
+        ...existingSchedule,
+        ...req.body,
+        id,
+        type: req.body.type || existingSchedule.type,
+        date: req.body.date || existingSchedule.date,
+        slots: req.body.slots || existingSchedule.slots,
+        timeSlots: req.body.timeSlots || req.body.slots || existingSchedule.timeSlots,
+        notes: req.body.notes || existingSchedule.notes || '',
+        cutoffTime: req.body.cutoffTime || existingSchedule.cutoffTime,
+        zipCodes: req.body.type === 'pickup' ? [] : (req.body.zipCodes || existingSchedule.zipCodes || []),
+        location: (req.body.type || existingSchedule.type) === 'pickup' ? (req.body.location || existingSchedule.location || '') : '',
+        locationDetails: (req.body.type || existingSchedule.type) === 'pickup'
+          ? (req.body.locationDetails || existingSchedule.locationDetails || {})
+          : null
+      };
+
+      if (existingSchedule.googleCalendarEventId) {
+        try {
+          await googleCalendar.updateAvailabilityEvent(existingSchedule.googleCalendarEventId, nextSchedule);
+        } catch (calendarError) {
+          console.error('Error updating Google Calendar event:', calendarError);
+        }
+      }
+
+      const { data, error } = await supabaseAdmin
+        .from('delivery_schedules')
+        .update(scheduleToRow(nextSchedule, id))
+        .eq('id', id)
+        .select()
+        .single();
+
+      if (error) throw error;
+
+      return res.status(200).json({
+        success: true,
+        data: scheduleFromRow(data)
+      });
+    } catch (error) {
+      console.error('Error updating delivery schedule in Supabase:', error);
+      return res.status(500).json({
+        success: false,
+        message: `Failed to update schedule: ${error.message}`
+      });
+    }
+  }
+
+  if (req.method === 'DELETE') {
+    if (!(await requireAdmin(req, res))) return;
+
+    try {
+      const { data: existingRow } = await supabaseAdmin
+        .from('delivery_schedules')
+        .select('*')
+        .eq('id', id)
+        .single();
+
+      if (!existingRow) return res.status(404).json({ error: 'Schedule not found' });
+
+      const schedule = scheduleFromRow(existingRow);
+      if (schedule.googleCalendarEventId) {
+        try {
+          await googleCalendar.deleteEvent(schedule.googleCalendarEventId);
+        } catch (calendarError) {
+          console.error('Error deleting Google Calendar event:', calendarError);
+        }
+      }
+
+      const { error } = await supabaseAdmin
+        .from('delivery_schedules')
+        .delete()
+        .eq('id', id);
+
+      if (error) throw error;
+
+      return res.status(200).json({ message: 'Schedule deleted successfully' });
+    } catch (error) {
+      console.error('Error deleting schedule from Supabase:', error);
+      return res.status(500).json({ error: 'Failed to delete schedule' });
+    }
+  }
+
+  res.setHeader('Allow', ['GET', 'PUT', 'DELETE']);
+  return res.status(405).json({ error: 'Method not allowed' });
+}

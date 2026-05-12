@@ -1,0 +1,6 @@
+[Withania somnifera] FOUND: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/WithaniaFruit.jpg/500px-WithaniaFruit.jpg
+[Ocimum tenuiflorum] FOUND: https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Tulsi_or_Tulasi_Holy_basil.jpg/500px-Tulsi_or_Tulasi_Holy_basil.jpg
+[Centella asiatica] FOUND: https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Centella_asiatica_%28%E0%A6%A5%E0%A6%BE%E0%A6%A8%E0%A6%95%E0%A7%81%E0%A6%A8%E0%A6%BF%29_%283%29.jpg/500px-Centella_asiatica_%28%E0%A6%A5%E0%A6%BE%E0%A6%A8%E0%A6%95%E0%A7%81%E0%A6%A8%E0%A6%BF%29_%283%29.jpg
+[Leonurus cardiaca] FOUND: https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Motherwort.jpg/500px-Motherwort.jpg
+[Verbascum thapsus] FOUND: https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Starr_040723-0030_Verbascum_thapsus.jpg/500px-Starr_040723-0030_Verbascum_thapsus.jpg
+[Matricaria chamomilla] FOUND: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Matricaria_February_2008-1.jpg/500px-Matricaria_February_2008-1.jpg

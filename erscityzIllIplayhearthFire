@@ -1,0 +1,411 @@
+[1mdiff --git a/lib/google-calendar.js b/lib/google-calendar.js[m
+[1mindex 29ad3b34..facf25b3 100644[m
+[1m--- a/lib/google-calendar.js[m
+[1m+++ b/lib/google-calendar.js[m
+[36m@@ -10,19 +10,19 @@[m [mconst getCalendarSettings = async () => {[m
+     const settingsDoc = await firestoreAdmin.collection('settings').doc('googleCalendar').get();[m
+     [m
+     if (!settingsDoc.exists) {[m
+[31m-      console.log('No Google Calendar settings found in Firestore');[m
+[32m+[m[32m      // console.log('No Google Calendar settings found in Firestore');[m
+       return null;[m
+     }[m
+     [m
+     const settings = settingsDoc.data();[m
+     [m
+     if (!settings.enabled) {[m
+[31m-      console.log('Google Calendar integration is disabled in settings');[m
+[32m+[m[32m      // console.log('Google Calendar integration is disabled in settings');[m
+       return null;[m
+     }[m
+     [m
+     if (!settings.calendarId || !settings.serviceAccountEmail || !settings.privateKey) {[m
+[31m-      console.log('Incomplete Google Calendar settings in Firestore');[m
+[32m+[m[32m      // console.log('Incomplete Google Calendar settings in Firestore');[m
+       return null;[m
+     }[m
+     [m
+[36m@@ -76,14 +76,24 @@[m [mconst getCalendarClient = async () => {[m
+       throw new Error('Missing Google service account credentials');[m
+     }[m
+     [m
+[31m-    // Format private key correctly if it's from environment variables[m
+[31m-    // Sometimes the key from env vars doesn't have proper newlines[m
+[31m-    if (privateKey && !privateKey.includes('-----BEGIN PRIVATE KEY-----')) {[m
+[32m+[m[32m    // Format private key correctly[m
+[32m+[m[32m    if (privateKey) {[m
+[32m+[m[32m      // Fix for escaping issues with private key[m
+       privateKey = privateKey.replace(/\\n/g, '\n');[m
+[32m+[m[41m      [m
+[32m+[m[32m      if (!privateKey.includes('-----BEGIN PRIVATE KEY-----')) {[m
+[32m+[m[32m        console.log('Private key format needs correction, adding certificate markers');[m
+[32m+[m[32m        privateKey = `-----BEGIN PRIVATE KEY-----\n${privateKey}\n-----END PRIVATE KEY-----`;[m
+[32m+[m[32m      }[m
+[32m+[m[41m      [m
+[32m+[m[32m      console.log('Private key properly formatted for JWT');[m
+     }[m
+     [m
+     // Set up auth with service account[m
+     try {[m
+[32m+[m[32m      console.log('Initializing JWT client with service account email:', serviceAccountEmail);[m
+[32m+[m[32m      console.log('Using calendar ID:', calendarId);[m
+[32m+[m[41m      [m
+       const auth = new google.auth.JWT({[m
+         email: serviceAccountEmail,[m
+         key: privateKey,[m
+[36m@@ -91,8 +101,19 @@[m [mconst getCalendarClient = async () => {[m
+       });[m
+       [m
+       // Test the authentication[m
+[31m-      await auth.authorize();[m
+[31m-      console.log('Google Auth JWT initialized successfully');[m
+[32m+[m[32m      try {[m
+[32m+[m[32m        await auth.authorize();[m
+[32m+[m[32m        console.log('Google Auth JWT initialized successfully');[m
+[32m+[m[32m      } catch (authError) {[m
+[32m+[m[32m        console.error('Error authorizing JWT client:', authError);[m
+[32m+[m[41m        [m
+[32m+[m[32m        if (isDevelopment) {[m
+[32m+[m[32m          console.log('Using mock client due to JWT auth failure in development');[m
+[32m+[m[32m          return createMockClient();[m
+[32m+[m[32m        } else {[m
+[32m+[m[32m          throw authError;[m
+[32m+[m[32m        }[m
+[32m+[m[32m      }[m
+       [m
+       // Create calendar client[m
+       const calendar = google.calendar({ version: 'v3', auth });[m
+[36m@@ -117,11 +138,18 @@[m [mconst getCalendarClient = async () => {[m
+         }[m
+       }[m
+       [m
+[31m-      client = { calendar, calendarId };[m
+[32m+[m[32m      client = { calendar, calendarId, mock: false };[m
+       console.log('Google Calendar client initialized successfully');[m
+       return client;[m
+     } catch (authError) {[m
+       console.error('Error initializing Google Auth JWT:', authError);[m
+[32m+[m[41m      [m
+[32m+[m[32m      // In development, return a mock client[m
+[32m+[m[32m      if (isDevelopment) {[m
+[32m+[m[32m        console.log('Using mock client due to JWT auth failure in development');[m
+[32m+[m[32m        return createMockClient();[m
+[32m+[m[32m      }[m
+[32m+[m[41m      [m
+       throw authError;[m
+     }[m
+   } catch (error) {[m
+[36m@@ -245,10 +273,32 @@[m [mexport async function listEvents(options = {}) {[m
+       params.timeMax = options.timeMax;[m
+     }[m
+     [m
+[31m-    const response = await calendar.events.list(params);[m
+[31m-    return response.data.items || [];[m
+[32m+[m[32m    console.log(`Fetching events from calendar ID: ${JSON.stringify(calendarId)}`);[m
+[32m+[m[32m    console.log(`Time range: ${params.timeMin} to ${params.timeMax || 'not specified'}`);[m
+[32m+[m[41m    [m
+[32m+[m[32m    try {[m
+[32m+[m[32m      const response = await calendar.events.list(params);[m
+[32m+[m[32m      return response.data.items || [];[m
+[32m+[m[32m    } catch (apiError) {[m
+[32m+[m[32m      console.error('Error calling Google Calendar API:', apiError);[m
+[32m+[m[41m      [m
+[32m+[m[32m      // In development mode, return mock events[m
+[32m+[m[32m      if (process.env.NODE_ENV === 'development') {[m
+[32m+[m[32m        console.log('Returning mock events in development mode after API error');[m
+[32m+[m[32m        return createMockEvents();[m
+[32m+[m[32m      }[m
+[32m+[m[41m      [m
+[32m+[m[32m      throw apiError;[m
+[32m+[m[32m    }[m
+   } catch (error) {[m
+     console.error('Error listing calendar events:', error);[m
+[32m+[m[41m    [m
+[32m+[m[32m    // In development mode, return mock events[m
+[32m+[m[32m    if (process.env.NODE_ENV === 'development') {[m
+[32m+[m[32m      console.log('Returning mock events in development mode after error');[m
+[32m+[m[32m      return createMockEvents();[m
+[32m+[m[32m    }[m
+[32m+[m[41m    [m
+     throw new Error('Failed to fetch calendar events');[m
+   }[m
+ }[m
+[36m@@ -308,7 +358,7 @@[m [mexport async function createAvailabilityEvent(scheduleData) {[m
+  */[m
+ async function createDeliveryCalendarEvent(orderData) {[m
+   try {[m
+[31m-    const { calendar, calendarId } = await getCalendarClient();[m
+[32m+[m[32m    const { calendar, calendarId, mock } = await getCalendarClient();[m
+     [m
+     if (!calendar) {[m
+       console.error('Failed to initialize Google Calendar client');[m
+[36m@@ -347,12 +397,56 @@[m [masync function createDeliveryCalendarEvent(orderData) {[m
+                        deliveryInfo.timeSlot === 'afternoon' ? 'Afternoon (1pm-5pm)' : [m
+                        'Custom Time';[m
+     [m
+[31m-    const address = module.exports.formatAddress(deliveryInfo.address);[m
+[32m+[m[32m    const formatAddress = function(addressObj) {[m
+[32m+[m[32m      if (!addressObj) return '';[m
+[32m+[m[41m      [m
+[32m+[m[32m      const { street, city, state, zipCode } = addressObj;[m
+[32m+[m[32m      return `${street}, ${city}, ${state} ${zipCode}`;[m
+[32m+[m[32m    };[m
+[32m+[m[41m    [m
+[32m+[m[32m    const formatDeliveryDescription = function(orderData) {[m
+[32m+[m[32m      const { deliveryInfo, items, orderId, customerName, customerEmail, customerPhone,[m[41m [m
+[32m+[m[32m              subtotal, deliveryFee, tax, total } = orderData;[m
+[32m+[m[41m      [m
+[32m+[m[32m      // Format items for the description[m
+[32m+[m[32m      const itemsList = items.map(item =>[m[41m [m
+[32m+[m[32m        `${item.quantity} x ${item.name} ($${item.price} each)`[m
+[32m+[m[32m      ).join('\n');[m
+[32m+[m[41m      [m
+[32m+[m[32m      const address = formatAddress(deliveryInfo.address);[m
+[32m+[m[41m      [m
+[32m+[m[32m      // Create a detailed description with order information[m
+[32m+[m[32m      return `[m
+[32m+[m[32mOrder ID: ${orderId}[m
+[32m+[m[32mCustomer: ${customerName || 'N/A'}[m
+[32m+[m[32mEmail: ${customerEmail || 'N/A'}[m
+[32m+[m[32mPhone: ${customerPhone || 'N/A'}[m
+[32m+[m
+[32m+[m[32mDelivery Address:[m
+[32m+[m[32m${address}[m
+[32m+[m
+[32m+[m[32mItems:[m
+[32m+[m[32m${itemsList}[m
+[32m+[m
+[32m+[m[32mSubtotal: $${subtotal}[m
+[32m+[m[32mDelivery Fee: $${deliveryFee || '0.00'}[m
+[32m+[m[32mTax: $${tax || '0.00'}[m
+[32m+[m[32mTotal: $${total}[m
+[32m+[m
+[32m+[m[32mSpecial Instructions: ${deliveryInfo.instructions || 'None'}[m
+[32m+[m
+[32m+[m[32m-----[m
+[32m+[m[32mEstimated delivery time: 1.5 hours[m
+[32m+[m[32mGoogle Maps Directions: https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}[m
+[32m+[m[32m`;[m
+[32m+[m[32m    };[m
+[32m+[m[41m    [m
+[32m+[m[32m    const address = formatAddress(deliveryInfo.address);[m
+     [m
+     const event = {[m
+[31m-      summary: `Delivery #${orderId.substring(6)} - ${timeSlotName}`,[m
+[32m+[m[32m      summary: `Delivery #${orderId.substring(orderId.length - 6)} - ${timeSlotName}`,[m
+       location: address,[m
+[31m-      description: module.exports.formatDeliveryDescription(orderData),[m
+[32m+[m[32m      description: formatDeliveryDescription(orderData),[m
+       start: {[m
+         dateTime: startTime.toISOString(),[m
+         timeZone: 'America/Chicago',[m
+[36m@@ -365,6 +459,13 @@[m [masync function createDeliveryCalendarEvent(orderData) {[m
+     };[m
+     [m
+     console.log('Creating Google Calendar event for delivery');[m
+[32m+[m[41m    [m
+[32m+[m[32m    // For mock client, just return a mock ID[m
+[32m+[m[32m    if (mock) {[m
+[32m+[m[32m      console.log('Using mock calendar client for createDeliveryCalendarEvent');[m
+[32m+[m[32m      return `mock-delivery-event-${Date.now()}`;[m
+[32m+[m[32m    }[m
+[32m+[m[41m    [m
+     const response = await calendar.events.insert({[m
+       calendarId,[m
+       resource: event,[m
+[36m@@ -389,12 +490,10 @@[m [mexport async function getDeliverySchedulesFromCalendar(timeMin, timeMax) {[m
+     console.log('Attempting to fetch delivery schedules from Google Calendar');[m
+     [m
+     // Get the calendar client to check if it's properly configured[m
+[31m-    const { calendar, calendarId, mock } = await getCalendarClient();[m
+[31m-    console.log('Using calendar ID:', calendarId);[m
+[32m+[m[32m    const calendarClient = await getCalendarClient();[m
+     [m
+[31m-    if (mock) {[m
+[32m+[m[32m    if (calendarClient.mock) {[m
+       console.log('Using mock calendar client, returning mock schedules');[m
+[31m-      // Create mock schedules directly here[m
+       return createMockSchedules();[m
+     }[m
+     [m
+[36m@@ -419,6 +518,11 @@[m [mexport async function getDeliverySchedulesFromCalendar(timeMin, timeMax) {[m
+       [m
+       console.log(`Found ${availabilityEvents.length} delivery availability events`);[m
+       [m
+[32m+[m[32m      if (availabilityEvents.length === 0) {[m
+[32m+[m[32m        console.log('No delivery availability events found in Google Calendar, using mock data');[m
+[32m+[m[32m        return createMockSchedules();[m
+[32m+[m[32m      }[m
+[32m+[m[41m      [m
+       // Convert the events to delivery schedules format[m
+       const schedules = availabilityEvents.map(event => {[m
+         const startDate = new Date(event.start.dateTime || event.start.date);[m
+[36m@@ -452,26 +556,32 @@[m [mexport async function getDeliverySchedulesFromCalendar(timeMin, timeMax) {[m
+           date: startDate.toISOString(),[m
+           slots,[m
+           zipCodes: ['12345', '23456', '34567'], // Default zip codes[m
+[31m-          cutoffTime: '6pm day before',[m
+[32m+[m[32m          cutoffTime: 24, // Hours before delivery[m
+           googleCalendarEventId: event.id[m
+         };[m
+       });[m
+       [m
+[31m-      if (schedules.length === 0) {[m
+[31m-        console.log('No delivery schedules found in Google Calendar, using mock data');[m
+[31m-        return createMockSchedules();[m
+[31m-      }[m
+[31m-      [m
+       return schedules;[m
+     } catch (error) {[m
+       console.error('Error fetching events from Google Calendar:', error);[m
+       [m
+[31m-      // Create mock schedules as fallback[m
+[31m-      console.log('Using mock schedules due to error');[m
+[31m-      return createMockSchedules();[m
+[32m+[m[32m      // Create mock schedules as fallback in development[m
+[32m+[m[32m      if (process.env.NODE_ENV === 'development') {[m
+[32m+[m[32m        console.log('Using mock schedules due to error');[m
+[32m+[m[32m        return createMockSchedules();[m
+[32m+[m[32m      }[m
+[32m+[m[41m      [m
+[32m+[m[32m      throw error;[m
+     }[m
+   } catch (error) {[m
+     console.error('Error fetching delivery schedules from calendar:', error);[m
+[32m+[m[41m    [m
+[32m+[m[32m    // Create mock schedules as fallback in development[m
+[32m+[m[32m    if (process.env.NODE_ENV === 'development') {[m
+[32m+[m[32m      console.log('Using mock schedules due to error in getDeliverySchedulesFromCalendar');[m
+[32m+[m[32m      return createMockSchedules();[m
+[32m+[m[32m    }[m
+[32m+[m[41m    [m
+     throw new Error('Failed to fetch delivery schedules from calendar');[m
+   }[m
+ }[m
+[36m@@ -599,92 +709,69 @@[m [mexport async function updateAvailabilityEvent(eventId, scheduleData) {[m
+ }[m
+ [m
+ /**[m
+[31m- * Count delivery events for a specific date and time slot[m
+[31m- * @param {string|object} date - The date to check (can be ISO string, Date object, or Firestore timestamp)[m
+[31m- * @param {string} timeSlot - The time slot ID ('morning' or 'afternoon')[m
+[31m- * @returns {Promise<number>} - Number of delivery events found[m
+[32m+[m[32m * Count the number of delivery events scheduled for a specific date and time slot.[m
+[32m+[m[32m * This helps determine how many orders are already scheduled for a delivery slot.[m
+[32m+[m[32m *[m[41m [m
+[32m+[m[32m * @param {Date|string} date - The date to check[m
+[32m+[m[32m * @param {string} timeSlot - The time slot ('morning' or 'afternoon')[m
+[32m+[m[32m * @returns {Promise<number>} The count of delivery events for the time slot[m
+  */[m
+ export async function countDeliveryEventsForSlot(date, timeSlot) {[m
+   try {[m
+[32m+[m[32m    console.log(`Counting delivery events for ${date} in the ${timeSlot} slot`);[m
+[32m+[m[41m    [m
+[32m+[m[32m    // Get client for Google Calendar API[m
+     const { calendar, calendarId, mock } = await getCalendarClient();[m
+     [m
+[32m+[m[32m    // If we're using mock data, return a random count between 0 and max[m
+     if (mock) {[m
+[31m-      console.log('Using mock calendar client for countDeliveryEventsForSlot');[m
+[31m-      return 0;[m
+[32m+[m[32m      const max = timeSlot === 'morning' ? 2 : 3;[m
+[32m+[m[32m      const count = Math.floor(Math.random() * max);[m
+[32m+[m[32m      console.log(`Using mock data: ${count} orders for ${timeSlot} slot`);[m
+[32m+[m[32m      return count;[m
+     }[m
+     [m
+[31m-    // Handle different date formats (ISO string, Date object, or Firestore timestamp)[m
+[31m-    let dateObj;[m
+[31m-    [m
+[31m-    if (date instanceof Date) {[m
+[31m-      // If it's already a Date object[m
+[31m-      dateObj = date;[m
+[31m-    } else if (typeof date === 'string') {[m
+[31m-      // If it's an ISO string[m
+[31m-      dateObj = new Date(date);[m
+[31m-    } else if (date && typeof date === 'object') {[m
+[31m-      // If it's a Firestore timestamp[m
+[31m-      if (date._seconds !== undefined) {[m
+[31m-        dateObj = new Date(date._seconds * 1000);[m
+[31m-      } else if (date.seconds !== undefined) {[m
+[31m-        dateObj = new Date(date.seconds * 1000);[m
+[31m-      } else {[m
+[31m-        // Fall back to current date if the format is unrecognized[m
+[31m-        console.warn('Unrecognized date format, using current date as fallback', date);[m
+[31m-        dateObj = new Date();[m
+[31m-      }[m
+[31m-    } else {[m
+[31m-      // Fall back to current date if the format is unrecognized[m
+[31m-      console.warn('Invalid date provided, using current date as fallback', date);[m
+[31m-      dateObj = new Date();[m
+[31m-    }[m
+[32m+[m[32m    // Convert date string to Date object if needed[m
+[32m+[m[32m    const dateObj = typeof date === 'string' ? new Date(date) : date;[m
+[32m+[m[41m    [m
+[32m+[m[32m    // Set up time boundaries for the slot[m
+[32m+[m[32m    // Morning slot: 9am-12pm[m
+[32m+[m[32m    // Afternoon slot: 1pm-5pm[m
+[32m+[m[32m    const startHour = timeSlot === 'morning' ? 9 : 13;[m
+[32m+[m[32m    const endHour = timeSlot === 'morning' ? 12 : 17;[m
+     [m
+[31m-    console.log(`Counting delivery events for ${dateObj.toDateString()} - ${timeSlot} slot`);[m
+[32m+[m[32m    // Create timeMin and timeMax for the query[m
+[32m+[m[32m    const timeMin = new Date(dateObj);[m
+[32m+[m[32m    timeMin.setHours(startHour, 0, 0, 0);[m
+     [m
+[31m-    // Create date range for the specific date[m
+[31m-    const startOfDay = new Date(dateObj);[m
+[31m-    startOfDay.setHours(0, 0, 0, 0);[m
+[32m+[m[32m    const timeMax = new Date(dateObj);[m
+[32m+[m[32m    timeMax.setHours(endHour, 0, 0, 0);[m
+     [m
+[31m-    const endOfDay = new Date(dateObj);[m
+[31m-    endOfDay.setHours(23, 59, 59, 999);[m
+[32m+[m[32m    console.log(`Checking for delivery events between ${timeMin.toISOString()} and ${timeMax.toISOString()}`);[m
+     [m
+[31m-    // Get all events for that day[m
+[32m+[m[32m    // Query Google Calendar for events in this time range[m
+     const events = await listEvents({[m
+[31m-      timeMin: startOfDay.toISOString(),[m
+[31m-      timeMax: endOfDay.toISOString(),[m
+[31m-      maxResults: 20 // Limit to reasonable number[m
+[32m+[m[32m      timeMin: timeMin.toISOString(),[m
+[32m+[m[32m      timeMax: timeMax.toISOString(),[m
+[32m+[m[32m      maxResults: 25[m
+     });[m
+     [m
+[31m-    console.log(`Found ${events.length} total events on ${dateObj.toDateString()}`);[m
+[31m-    [m
+[31m-    // Filter to only include delivery events (not availability events)[m
+[31m-    // and only those for the requested time slot[m
+[32m+[m[32m    // Filter for actual delivery events (not availability events)[m
+     const deliveryEvents = events.filter(event => {[m
+[31m-      // Check if this is a delivery event (not an availability event)[m
+[31m-      const isDeliveryEvent = event.summary && [m
+[31m-        (event.summary.includes('Delivery') || event.summary.includes('Delivery #')) && [m
+[31m-        !event.summary.includes('Availability');[m
+[31m-      [m
+[31m-      if (!isDeliveryEvent) return false;[m
+[31m-      [m
+[31m-      // Check if it's for the requested time slot[m
+[31m-      const isMorningEvent = event.summary.includes('Morning') || [m
+[31m-                          (event.start.dateTime && new Date(event.start.dateTime).getHours() < 12) ||[m
+[31m-                          (event.summary.includes('9am'));[m
+[31m-      [m
+[31m-      const isAfternoonEvent = event.summary.includes('Afternoon') || [m
+[31m-                            (event.start.dateTime && new Date(event.start.dateTime).getHours() >= 12) ||[m
+[31m-                            (event.summary.includes('1pm'));[m
+[31m-      [m
+[31m-      return (timeSlot === 'morning' && isMorningEvent) || [m
+[31m-             (timeSlot === 'afternoon' && isAfternoonEvent);[m
+[32m+[m[32m      return event.summary && ([m
+[32m+[m[32m        (event.summary.includes('Delivery #') ||[m[41m [m
+[32m+[m[32m         event.summary.includes('Order #') ||[m
+[32m+[m[32m         (event.summary.includes('Delivery') && !event.summary.includes('Availability')))[m
+[32m+[m[32m      );[m
+     });[m
+     [m
+[31m-    console.log(`Found ${deliveryEvents.length} delivery events for ${timeSlot} on ${dateObj.toDateString()}`);[m
+[32m+[m[32m    console.log(`Found ${deliveryEvents.length} delivery events for ${timeSlot} slot on ${dateObj.toDateString()}`);[m
+[32m+[m[41m    [m
+  

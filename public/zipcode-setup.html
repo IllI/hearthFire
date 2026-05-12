@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlanta Zipcode GeoJSON Setup</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      color: #22c55e;
+      border-bottom: 2px solid #22c55e;
+      padding-bottom: 10px;
+    }
+    .step {
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .button {
+      background-color: #22c55e;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 10px 0;
+    }
+    .button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    .progress {
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .success {
+      color: #22c55e;
+      font-weight: bold;
+    }
+    .error {
+      color: #dc2626;
+      font-weight: bold;
+    }
+    pre {
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Atlanta Zipcode GeoJSON Setup</h1>
+  
+  <div class="step">
+    <h2>Step 1: Download Georgia Zipcode GeoJSON Data</h2>
+    <p>Click the button below to download the Georgia zipcode GeoJSON data from a public source:</p>
+    <button id="downloadButton" class="button">Download Georgia Zipcode Data</button>
+    <div id="downloadProgress" class="progress"></div>
+  </div>
+  
+  <div class="step">
+    <h2>Step 2: Process and Save the Data</h2>
+    <p>Process the downloaded data to extract only the Atlanta area zipcodes and save it to your site:</p>
+    <button id="processButton" class="button" disabled>Process and Save Data</button>
+    <div id="processProgress" class="progress"></div>
+  </div>
+  
+  <div class="step">
+    <h2>Step 3: Test the Data</h2>
+    <p>Verify that the data is working correctly on your map:</p>
+    <button id="testButton" class="button" disabled>Test Zipcode Map</button>
+    <div id="testResults" class="progress"></div>
+  </div>
+  
+  <script>
+    // List of valid Atlanta-area delivery zipcodes
+    const VALID_ZIP_CODES = [
+      "30002", "30021", "30030", "30032", "30033", "30034", "30035", "30038",
+      "30072", "30079", "30080", "30083", "30084", "30088", "30094", "30228", 
+      "30236", "30238", "30250", "30253", "30260", "30273", "30274", "30281", 
+      "30288", "30294", "30296", "30297", "30303", "30305", "30306", "30307", 
+      "30308", "30309", "30310", "30311", "30312", "30313", "30314", "30315", 
+      "30316", "30317", "30318", "30319", "30322", "30324", "30326", "30327", 
+      "30328", "30329", "30332", "30334", "30337", "30338", "30339", "30340", 
+      "30341", "30342", "30344", "30345", "30346", "30354", "30360", "30363"
+    ];
+    
+    let rawGeoJsonData = null;
+    
+    // Step 1: Download button event
+    document.getElementById('downloadButton').addEventListener('click', async () => {
+      const progressEl = document.getElementById('downloadProgress');
+      progressEl.innerHTML = 'Downloading data from GitHub...';
+      
+      try {
+        // Fetch the Georgia zipcode data from GitHub
+        const response = await fetch('https://raw.githubusercontent.com/OpenDataDE/State-zip-code-GeoJSON/master/ga_georgia_zip_codes_geo.min.json');
+        
+        if (!response.ok) {
+          throw new Error(`Failed to download data: ${response.status} ${response.statusText}`);
+        }
+        
+        rawGeoJsonData = await response.json();
+        
+        progressEl.innerHTML = `<span class="success">✓ Download successful! Found ${rawGeoJsonData.features.length} Georgia zipcodes.</span>`;
+        document.getElementById('processButton').disabled = false;
+      } catch (error) {
+        progressEl.innerHTML = `<span class="error">× Error: ${error.message}</span>`;
+      }
+    });
+    
+    // Step 2: Process and save button event
+    document.getElementById('processButton').addEventListener('click', async () => {
+      const progressEl = document.getElementById('processProgress');
+      progressEl.innerHTML = 'Processing data...';
+      
+      try {
+        if (!rawGeoJsonData || !rawGeoJsonData.features) {
+          throw new Error('No GeoJSON data available. Please download it first.');
+        }
+        
+        // Filter to include only Atlanta-area zipcodes
+        const atlantaFeatures = rawGeoJsonData.features.filter(feature => {
+          const zipcode = feature.properties.ZCTA5CE10;
+          return VALID_ZIP_CODES.includes(zipcode);
+        });
+        
+        if (atlantaFeatures.length === 0) {
+          throw new Error('No Atlanta-area zipcodes found in the data.');
+        }
+        
+        // Create a simplified GeoJSON object with only Atlanta zipcodes
+        const atlantaGeoJson = {
+          type: "FeatureCollection",
+          features: atlantaFeatures
+        };
+        
+        // Save the processed data
+        const saveResponse = await fetch('/api/save-zipcode-data', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(atlantaGeoJson),
+        });
+        
+        if (!saveResponse.ok) {
+          const errorData = await saveResponse.json();
+          throw new Error(`Failed to save data: ${errorData.error || saveResponse.statusText}`);
+        }
+        
+        progressEl.innerHTML = `<span class="success">✓ Successfully processed and saved ${atlantaFeatures.length} Atlanta-area zipcodes!</span>`;
+        document.getElementById('testButton').disabled = false;
+      } catch (error) {
+        progressEl.innerHTML = `<span class="error">× Error: ${error.message}</span><p>As an alternative, you can manually download the data and place it in the public directory:</p>
+        <ol>
+          <li>Download <a href="https://raw.githubusercontent.com/OpenDataDE/State-zip-code-GeoJSON/master/ga_georgia_zip_codes_geo.min.json" target="_blank">this file</a></li>
+          <li>Save it as "atlanta-zipcodes.json" in your project's public folder</li>
+        </ol>`;
+      }
+    });
+    
+    // Step 3: Test button event
+    document.getElementById('testButton').addEventListener('click', async () => {
+      const resultsEl = document.getElementById('testResults');
+      resultsEl.innerHTML = 'Testing zipcode map...';
+      
+      try {
+        // Request the new zipcode data from API with force regeneration
+        const response = await fetch('/api/zipcodes?regenerate=true');
+        
+        if (!response.ok) {
+          throw new Error(`Failed to fetch zipcode data: ${response.status} ${response.statusText}`);
+        }
+        
+        const data = await response.json();
+        
+        if (!data.features || data.features.length === 0) {
+          throw new Error('No zipcode features returned from API.');
+        }
+        
+        const sampleFeature = data.features[0];
+        
+        resultsEl.innerHTML = `
+          <span class="success">✓ Successfully tested! Found ${data.features.length} zipcode features.</span>
+          <p>Sample zipcode ${sampleFeature.properties.zipcode} data looks good.</p>
+          <p>You can now <a href="/cart" target="_blank">go to the cart page</a> to see your real zipcodes on the map!</p>
+        `;
+      } catch (error) {
+        resultsEl.innerHTML = `<span class="error">× Error: ${error.message}</span>`;
+      }
+    });
+  </script>
+</body>
+</html> 

@@ -1,0 +1,19 @@
+node_modules/
+.next/
+build/
+dist/
+*.log
+.DS_Store
+.env
+.env.local
+.env.*
+!.env.example
+!.env.local.example
+
+# Exclude uploads except for .gitkeep files
+public/uploads/*
+public/uploads/**/*
+!public/uploads/
+!public/uploads/*/
+!public/uploads/*/.gitkeep
+!public/uploads/README.md

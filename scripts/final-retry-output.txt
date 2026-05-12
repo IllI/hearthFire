@@ -1,0 +1,59 @@
+=== Final Retry (11 remaining) ===
+
+Processing: Andrographis
+  Wiki: https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Andrographis_paniculat...
+  Error: HTTP 429
+Processing: Chamomile
+  Wiki: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Matricaria_February_20...
+  Downloaded: 187523 bytes
+  ImgBB: https://i.ibb.co/G4wkSKmW/chamomile.jpg
+  Updated!
+Processing: Chicory, Wild Form
+  Wiki: https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Illustration_Cichorium...
+  Downloaded: 377388 bytes
+  ImgBB: https://i.ibb.co/CsWDqmyT/chicory-wild-form.jpg
+  Updated!
+Processing: Gotu Kola
+  Wiki: https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Centella_asiatica_%28%...
+  Downloaded: 284282 bytes
+  ImgBB: https://i.ibb.co/WvkLHnR0/gotu-kola.jpg
+  Updated!
+Processing: Hairy Woodmint
+  Wiki: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Blephilia_hirsuta_infl...
+  Downloaded: 217829 bytes
+  ImgBB: https://i.ibb.co/bRjfymLn/hairy-woodmint.jpg
+  Updated!
+Processing: Holy Basil, Temperate
+  Wiki: https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/ChristianBauer_stalk_o...
+  Downloaded: 112648 bytes
+  ImgBB: https://i.ibb.co/s9bnM9B8/holy-basil-temperate.jpg
+  Updated!
+Processing: Holy Basil, Vana
+  Wiki: https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Starr_030202-0053_Ocim...
+  Downloaded: 424466 bytes
+  ImgBB: https://i.ibb.co/5qWDrvm/holy-basil-vana.jpg
+  Updated!
+Processing: New Zealand Spinach
+  Wiki: https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Tetragonia_tetragonioi...
+  Downloaded: 379834 bytes
+  ImgBB: https://i.ibb.co/7NRR6gcM/new-zealand-spinach.jpg
+  Updated!
+Processing: Sorrel, Garden
+  Wiki: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/%28MHNT%29_Rumex_aceto...
+  Downloaded: 257050 bytes
+  ImgBB: https://i.ibb.co/rGc4bJ5t/sorrel-garden.jpg
+  Updated!
+Processing: Spilanthes
+  Wiki: https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Spilanthes-closeup-lar...
+  Downloaded: 143725 bytes
+  ImgBB: https://i.ibb.co/NnnC2jKP/spilanthes.jpg
+  Updated!
+Processing: Wild Dagga
+  Wiki: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Southern_Double-collar...
+  Downloaded: 297311 bytes
+  ImgBB: https://i.ibb.co/Cpp300QG/wild-dagga.jpg
+  Updated!
+
+=== DONE ===
+Success: 10 -> Chamomile, Chicory, Wild Form, Gotu Kola, Hairy Woodmint, Holy Basil, Temperate, Holy Basil, Vana, New Zealand Spinach, Sorrel, Garden, Spilanthes, Wild Dagga
+Failed: 1 -> Andrographis

@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "hearthfire-farms"
+  },
+  "targets": {
+    "hearthfire-farms": {
+      "hosting": {
+        "default": [
+          "hearthfire-farms"
+        ],
+        "hearthfire-farm": [
+          "hearthfire-farm"
+        ]
+      }
+    }
+  }
+} 

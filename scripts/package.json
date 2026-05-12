@@ -1,0 +1,45 @@
+{
+  "name": "hearthfire-scripts",
+  "version": "1.0.0",
+  "description": "Scripts for managing Hearthfire Farm data",
+  "main": "index.js",
+  "scripts": {
+    "seed:products": "node seed-products.js",
+    "seed:plants": "node seed-plants.js",
+    "seed:plants:simple": "node seed-plants-simplified.js",
+    "seed:plants:images": "node seed-plants-with-ddg-images.js",
+    "seed:plants:enhanced": "node enhanced-plant-seeder.js",
+    "seed:plants:local": "node enhanced-local-plant-seeder.js",
+    "seed:plants:auto": "node automated-plant-generator.js",
+    "organize:images": "node organize-local-images.js",
+    "clear:data": "node clear-data.js products categories",
+    "clear:products": "node clear-data.js products",
+    "clear:categories": "node clear-data.js categories",
+    "reset:data": "node reset-and-seed.js",
+    "reset:data:simple": "node reset-and-seed-simple.js",
+    "reset:data:images": "node reset-and-seed-images.js",
+    "reset:data:enhanced": "node reset-and-seed-enhanced.js",
+    "reset:data:local": "node reset-and-seed-local.js",
+    "reset:data:auto": "node clear-data.js && node automated-plant-generator.js",
+    "image:manager": "node image-manager.js",
+    "test:admin": "node test-admin-sdk.js",
+    "generate:image-list": "node generate-image-list.js",
+    "update:image": "node image-manager.js update"
+  },
+  "keywords": [
+    "hearthfire",
+    "farm",
+    "scripts"
+  ],
+  "author": "Hearthfire Farm",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.8.1",
+    "canvas": "^3.1.0",
+    "cheerio": "^1.0.0-rc.12",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.3.1",
+    "firebase": "^10.6.0",
+    "firebase-admin": "^12.0.0"
+  }
+}

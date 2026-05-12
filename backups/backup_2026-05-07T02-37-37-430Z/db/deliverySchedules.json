@@ -1,0 +1,1109 @@
+{
+  "0ocftdpku6p7pce38eisc1uo5f": {
+    "date": "2025-03-21T00:00:00.000Z",
+    "note": "",
+    "zipCodes": [],
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "0ocftdpku6p7pce38eisc1uo5f",
+    "id": "0ocftdpku6p7pce38eisc1uo5f",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 0
+      },
+      {
+        "id": "afternoon",
+        "name": "Afternoon",
+        "time": "1pm - 5pm",
+        "available": true,
+        "maxOrders": 3,
+        "currentOrders": 0
+      }
+    ],
+    "createdAt": "2025-03-21T00:05:05.179Z",
+    "lastUpdated": {
+      "_seconds": 1742515508,
+      "_nanoseconds": 932000000
+    },
+    "updatedAt": "2025-03-21T00:05:05.179Z"
+  },
+  "0vt97gvr5jjkeh9si3rjg0qv7v": {
+    "date": "2025-04-11T13:00:00.000Z",
+    "note": "",
+    "zipCodes": [],
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "0vt97gvr5jjkeh9si3rjg0qv7v",
+    "location": "",
+    "id": "0vt97gvr5jjkeh9si3rjg0qv7v",
+    "type": "delivery",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 1
+      },
+      {
+        "id": "afternoon",
+        "name": "Afternoon",
+        "time": "1pm - 5pm",
+        "available": true,
+        "maxOrders": 3,
+        "currentOrders": 1
+      }
+    ],
+    "createdAt": "2025-04-06T21:03:19.599Z",
+    "lastUpdated": {
+      "_seconds": 1743973401,
+      "_nanoseconds": 397000000
+    },
+    "updatedAt": "2025-04-06T21:03:19.599Z"
+  },
+  "1g2nsjh45psirakveimpfun5f4": {
+    "note": "",
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "1g2nsjh45psirakveimpfun5f4",
+    "id": "1g2nsjh45psirakveimpfun5f4",
+    "date": "2025-04-03T14:00:00.000Z",
+    "slots": [
+      {
+        "id": "pickup-window",
+        "name": "Pickup Window",
+        "time": "9am-3pm",
+        "available": true,
+        "maxOrders": 999,
+        "currentOrders": 0
+      }
+    ],
+    "zipCodes": [],
+    "location": "363 W Hemphill Rd, Stockbridge, GA 30281, USA",
+    "type": "pickup",
+    "createdAt": "2025-04-03T07:25:11.621Z",
+    "lastUpdated": {
+      "_seconds": 1743665111,
+      "_nanoseconds": 621000000
+    },
+    "updatedAt": "2025-04-03T07:25:11.621Z"
+  },
+  "1vddpa7aog9imllioaoakntvoo": {
+    "date": "2025-03-26T14:00:00.000Z",
+    "note": "",
+    "zipCodes": [],
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "1vddpa7aog9imllioaoakntvoo",
+    "id": "1vddpa7aog9imllioaoakntvoo",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 1
+      },
+      {
+        "id": "afternoon",
+        "name": "Afternoon",
+        "time": "1pm - 5pm",
+        "available": true,
+        "maxOrders": 3,
+        "currentOrders": 0
+      }
+    ],
+    "createdAt": "2025-03-25T05:43:00.163Z",
+    "lastUpdated": {
+      "_seconds": 1742881380,
+      "_nanoseconds": 165000000
+    },
+    "updatedAt": "2025-03-25T05:43:00.163Z"
+  },
+  "2vhke9qq2g09u0401hudbgch6q": {
+    "id": "2vhke9qq2g09u0401hudbgch6q",
+    "date": "2025-03-12T14:00:00.000Z",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 0,
+        "durationHours": 3
+      },
+      {
+        "id": "afternoon",
+        "name": "Afternoon",
+        "time": "1pm - 5pm",
+        "available": true,
+        "maxOrders": 3,
+        "currentOrders": 0,
+        "durationHours": 4
+      }
+    ],
+    "zipCodes": [
+      "12345",
+      "23456",
+      "34567"
+    ],
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "2vhke9qq2g09u0401hudbgch6q",
+    "updatedAt": {
+      "_seconds": 1741676561,
+      "_nanoseconds": 480000000
+    }
+  },
+  "37vusbas1shtu0bkemafhbvkee": {
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "37vusbas1shtu0bkemafhbvkee",
+    "date": "2025-03-21T14:00:00.000Z",
+    "note": "",
+    "zipCodes": [],
+    "id": "37vusbas1shtu0bkemafhbvkee",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": false,
+        "maxOrders": 2,
+        "currentOrders": 2
+      },
+      {
+        "id": "afternoon",
+        "name": "Afternoon",
+        "time": "1pm - 5pm",
+        "available": true,
+        "maxOrders": 3,
+        "currentOrders": 1
+      }
+    ],
+    "createdAt": "2025-03-21T00:05:05.179Z",
+    "lastUpdated": {
+      "_seconds": 1742515508,
+      "_nanoseconds": 933000000
+    },
+    "updatedAt": "2025-03-21T00:05:05.179Z"
+  },
+  "3c6e9c15ivdetukiunq3kisqdo": {
+    "date": "2025-03-22T00:00:00.000Z",
+    "note": "",
+    "zipCodes": [],
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "3c6e9c15ivdetukiunq3kisqdo",
+    "id": "3c6e9c15ivdetukiunq3kisqdo",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": false,
+        "maxOrders": 2,
+        "currentOrders": 2
+      },
+      {
+        "id": "afternoon",
+        "name": "Afternoon",
+        "time": "1pm - 5pm",
+        "available": true,
+        "maxOrders": 3,
+        "currentOrders": 1
+      }
+    ],
+    "createdAt": "2025-03-21T00:05:05.179Z",
+    "lastUpdated": {
+      "_seconds": 1742515508,
+      "_nanoseconds": 933000000
+    },
+    "updatedAt": "2025-03-21T00:05:05.179Z"
+  },
+  "3hd3sb46bh07tifpdigr2cler4": {
+    "date": "2025-04-02T23:00:00.000Z",
+    "note": "PICKUP ORDER #1742510943425\n\nCustomer: Kevin ONeill\nEmail: cityzenill@gmail.com\nPhone: (773) 263-7100\n\nPickup Location: Hearthfire Farm Pickup Availability\nPickup Date: 4/2/2025\nPickup Time: 07:00 PM\n\nOrder Items:\n- 1x Coreopsis, Lanceleaf ($10.81)\n\nOrder Total: $16.57\n\n---------------------------\nOrder Link: https://hearthfire-farm.web.app/orders/1742510943425\nAdmin Order Link: https://hearthfire-farm.web.app/admin/orders/1742510943425\n",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 0
+      },
+      {
+        "id": "afternoon",
+        "name": "Afternoon",
+        "time": "1pm - 5pm",
+        "available": true,
+        "maxOrders": 3,
+        "currentOrders": 0
+      }
+    ],
+    "zipCodes": [
+      "363 W Hemphill Rd",
+      "Stockbridge",
+      "GA 30281",
+      "USA"
+    ],
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "3hd3sb46bh07tifpdigr2cler4",
+    "id": "3hd3sb46bh07tifpdigr2cler4",
+    "createdAt": "2025-03-20T23:28:50.066Z",
+    "lastUpdated": {
+      "_seconds": 1742513330,
+      "_nanoseconds": 70000000
+    },
+    "updatedAt": "2025-03-20T23:28:50.066Z"
+  },
+  "557poqo955ml4v2kqo8d1spb5k": {
+    "date": "2025-04-08T14:00:00.000Z",
+    "note": "",
+    "slots": [
+      {
+        "id": "pickup-window",
+        "name": "Pickup Window",
+        "time": "9am-3pm",
+        "available": true,
+        "maxOrders": 999,
+        "currentOrders": 0
+      }
+    ],
+    "zipCodes": [],
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "557poqo955ml4v2kqo8d1spb5k",
+    "location": "363 W Hemphill Rd, Stockbridge, GA 30281, USA",
+    "id": "557poqo955ml4v2kqo8d1spb5k",
+    "type": "pickup",
+    "createdAt": "2025-04-06T21:03:19.598Z",
+    "lastUpdated": {
+      "_seconds": 1743973401,
+      "_nanoseconds": 394000000
+    },
+    "updatedAt": "2025-04-06T21:03:19.598Z"
+  },
+  "5dvul1vu82uasaggqouflgegip": {
+    "note": "",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 0
+      },
+      {
+        "id": "afternoon",
+        "name": "Afternoon",
+        "time": "1pm - 5pm",
+        "available": true,
+        "maxOrders": 3,
+        "currentOrders": 0
+      }
+    ],
+    "zipCodes": [],
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "5dvul1vu82uasaggqouflgegip",
+    "id": "5dvul1vu82uasaggqouflgegip",
+    "location": "",
+    "type": "delivery",
+    "date": "2025-04-02T13:00:00.000Z",
+    "createdAt": "2025-04-02T15:56:02.743Z",
+    "lastUpdated": {
+      "_seconds": 1743609362,
+      "_nanoseconds": 745000000
+    },
+    "updatedAt": "2025-04-02T15:56:02.743Z"
+  },
+  "61gcdqubj4v3qarn810820rqir": {
+    "date": "2025-04-09T13:00:00.000Z",
+    "note": "",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 0
+      },
+      {
+        "id": "afternoon",
+        "name": "Afternoon",
+        "time": "1pm - 5pm",
+        "available": true,
+        "maxOrders": 3,
+        "currentOrders": 0
+      }
+    ],
+    "zipCodes": [],
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "61gcdqubj4v3qarn810820rqir",
+    "location": "",
+    "id": "61gcdqubj4v3qarn810820rqir",
+    "type": "delivery",
+    "createdAt": "2025-04-06T21:03:19.599Z",
+    "lastUpdated": {
+      "_seconds": 1743973401,
+      "_nanoseconds": 396000000
+    },
+    "updatedAt": "2025-04-06T21:03:19.599Z"
+  },
+  "73ecqrv48rs094r6g6td4l8lm2": {
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "73ecqrv48rs094r6g6td4l8lm2",
+    "date": "2025-03-15T14:00:00.000Z",
+    "note": "",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 0
+      },
+      {
+        "id": "afternoon",
+        "name": "Afternoon",
+        "time": "1pm - 5pm",
+        "available": true,
+        "maxOrders": 3,
+        "currentOrders": 0
+      }
+    ],
+    "zipCodes": [],
+    "id": "73ecqrv48rs094r6g6td4l8lm2",
+    "createdAt": "2025-03-15T03:35:31.527Z",
+    "lastUpdated": {
+      "_seconds": 1742009734,
+      "_nanoseconds": 305000000
+    },
+    "updatedAt": "2025-03-15T03:35:31.527Z"
+  },
+  "7h9t8hogau301kr5f1minnfpgf": {
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "7h9t8hogau301kr5f1minnfpgf",
+    "date": "2025-03-14T14:00:00.000Z",
+    "note": "",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 1
+      },
+      {
+        "id": "afternoon",
+        "name": "Afternoon",
+        "time": "1pm - 5pm",
+        "available": true,
+        "maxOrders": 3,
+        "currentOrders": 0
+      }
+    ],
+    "zipCodes": [],
+    "id": "7h9t8hogau301kr5f1minnfpgf",
+    "createdAt": "2025-03-14T03:53:07.903Z",
+    "lastUpdated": {
+      "_seconds": 1741924392,
+      "_nanoseconds": 233000000
+    },
+    "updatedAt": "2025-03-14T03:53:07.903Z"
+  },
+  "7ucmh754khom8mns2hqh8qsf8s": {
+    "date": "2025-04-02T18:00:00.000Z",
+    "note": "🌱 PICKUP ORDER #1742513287298 🌱\n\n📋 CUSTOMER INFORMATION:\n• Name: Kevin ONeill\n• Email: cityzenill@gmail.com\n• Phone: (773) 263-7100\n\n📍 PICKUP DETAILS:\n• Location: Hearthfire Farm Pickup Availability\n• Date: Wednesday, April 2, 2025\n• Time: 2:00 PM\n• Address: 363 W Hemphill Rd, Stockbridge, GA 30281, USA\n\n🛒 ORDER ITEMS:\n• 1× Coreopsis, Lanceleaf ($10.81 each) = $10.81\n\n💰 ORDER SUMMARY:\n• Subtotal: $10.81\n• Tax: $0.76\n• Pickup Fee: $5.00\n• Total: $16.57\n\n---------------------------\n🔗 ORDER LINKS:\n• Customer Order: https://hearthfire-farm.web.app/orders/1742513287298\n• Admin Order: https://hearthfire-farm.web.app/admin/orders/1742513287298\n",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 0
+      },
+      {
+        "id": "afternoon",
+        "name": "Afternoon",
+        "time": "1pm - 5pm",
+        "available": true,
+        "maxOrders": 3,
+        "currentOrders": 0
+      }
+    ],
+    "zipCodes": [
+      "363 W Hemphill Rd",
+      "Stockbridge",
+      "GA 30281",
+      "USA"
+    ],
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "7ucmh754khom8mns2hqh8qsf8s",
+    "id": "7ucmh754khom8mns2hqh8qsf8s",
+    "createdAt": "2025-03-20T23:28:50.066Z",
+    "lastUpdated": {
+      "_seconds": 1742513330,
+      "_nanoseconds": 70000000
+    },
+    "updatedAt": "2025-03-20T23:28:50.066Z"
+  },
+  "DJOrwMmlbNiC8LwhynIv": {
+    "zipCodes": [],
+    "date": "2025-03-28T05:00:00.000Z",
+    "type": "pickup",
+    "slots": [
+      {
+        "id": "pickup-window",
+        "name": "9am-3pm",
+        "time": "9am-3pm",
+        "maxOrders": 999,
+        "available": true
+      }
+    ],
+    "location": "363 W Hemphill Rd, Stockbridge, GA 30281, USA",
+    "locationDetails": {
+      "formatted": "363 W Hemphill Rd, Stockbridge, GA 30281, USA",
+      "coordinates": {
+        "lat": 33.5571451,
+        "lng": -84.1754326
+      },
+      "street_number": "363",
+      "street": "West Hemphill Road",
+      "city": "Stockbridge",
+      "state": "GA",
+      "zip": "30281",
+      "country": "US",
+      "street_address": "363 West Hemphill Road"
+    },
+    "cutoffTime": 12,
+    "notes": "Hearthfire Farm Open Farm Day\nCome pick up your order and check out the farm!",
+    "createdAt": "2025-03-27T18:39:04.260Z",
+    "updatedAt": "2025-03-27T18:39:04.260Z",
+    "id": "DJOrwMmlbNiC8LwhynIv",
+    "googleCalendarEventId": "vpjcsg75n9gk7j8eup0gimo1gg"
+  },
+  "MUX3Z44tLnkdiTElZm7p": {
+    "zipCodes": [],
+    "date": "2025-04-15T05:00:00.000Z",
+    "type": "pickup",
+    "slots": [
+      {
+        "id": "pickup-window",
+        "name": "9am-3pm",
+        "time": "9am-3pm",
+        "maxOrders": 999,
+        "available": true
+      }
+    ],
+    "location": "363 W Hemphill Rd, Stockbridge, GA 30281, USA",
+    "locationDetails": {
+      "formatted": "363 W Hemphill Rd, Stockbridge, GA 30281, USA",
+      "coordinates": {
+        "lat": 33.5571451,
+        "lng": -84.1754326
+      },
+      "street_number": "363",
+      "street": "West Hemphill Road",
+      "city": "Stockbridge",
+      "state": "GA",
+      "zip": "30281",
+      "country": "US",
+      "street_address": "363 West Hemphill Road"
+    },
+    "cutoffTime": 12,
+    "notes": "Hearthfire Farm Open Farms Day\nCome by and pick up your order and visit the farm!",
+    "createdAt": "2025-03-27T18:56:59.651Z",
+    "updatedAt": "2025-03-27T18:56:59.651Z",
+    "id": "MUX3Z44tLnkdiTElZm7p",
+    "googleCalendarEventId": "hvv8g8ob0jte21rt8khiv9si44"
+  },
+  "OpURGV1NTw3B4sI6LTd1": {
+    "zipCodes": [],
+    "date": "2025-03-28T05:00:00.000Z",
+    "type": "pickup",
+    "slots": [
+      {
+        "id": "pickup-window",
+        "name": "9am-3pm",
+        "time": "9am-3pm",
+        "maxOrders": 999,
+        "available": true
+      }
+    ],
+    "location": "363 W Hemphill Rd, Stockbridge, GA 30281, USA",
+    "locationDetails": {
+      "formatted": "363 W Hemphill Rd, Stockbridge, GA 30281, USA",
+      "coordinates": {
+        "lat": 33.5571451,
+        "lng": -84.1754326
+      },
+      "street_number": "363",
+      "street": "West Hemphill Road",
+      "city": "Stockbridge",
+      "state": "GA",
+      "zip": "30281",
+      "country": "US",
+      "street_address": "363 West Hemphill Road"
+    },
+    "cutoffTime": 12,
+    "notes": "Hearthfire Farm Open Farms Day\nCome by and pick up your order and visit the farm!",
+    "createdAt": "2025-03-27T18:54:14.059Z",
+    "updatedAt": "2025-03-27T18:54:14.059Z",
+    "id": "OpURGV1NTw3B4sI6LTd1",
+    "googleCalendarEventId": "eimnrm3bgdqakiftd5uujlc0q4"
+  },
+  "afap9gvnp9rfdjmba91pasn8tk": {
+    "date": "2025-03-28T14:00:00.000Z",
+    "note": "Hearthfire farm Open Farm Day\n\nCome by and pickup your delivery and check out our farm! \n\nPickup location: 363 W Hemphill Rd, Stockbridge, GA 30281, USA\nGoogle Maps: https://maps.google.com/?q=33.5571451,-84.1754326",
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "afap9gvnp9rfdjmba91pasn8tk",
+    "id": "afap9gvnp9rfdjmba91pasn8tk",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 0
+      }
+    ],
+    "zipCodes": [],
+    "location": "363 W Hemphill Rd, Stockbridge, GA 30281, USA",
+    "type": "pickup",
+    "createdAt": "2025-03-28T03:52:50.130Z",
+    "lastUpdated": {
+      "_seconds": 1743133970,
+      "_nanoseconds": 138000000
+    },
+    "updatedAt": "2025-03-28T03:52:50.130Z"
+  },
+  "bouJH5WKCYv38Ex9JQdb": {
+    "zipCodes": [],
+    "date": "2025-03-28T05:00:00.000Z",
+    "type": "pickup",
+    "slots": [
+      {
+        "id": "pickup-window",
+        "name": "9am-3pm",
+        "time": "9am-3pm",
+        "maxOrders": 999,
+        "available": true
+      }
+    ],
+    "location": "363 W Hemphill Rd, Stockbridge, GA 30281, USA",
+    "locationDetails": {
+      "formatted": "363 W Hemphill Rd, Stockbridge, GA 30281, USA",
+      "coordinates": {
+        "lat": 33.5571451,
+        "lng": -84.1754326
+      },
+      "street_number": "363",
+      "street": "West Hemphill Road",
+      "city": "Stockbridge",
+      "state": "GA",
+      "zip": "30281",
+      "country": "US",
+      "street_address": "363 West Hemphill Road"
+    },
+    "cutoffTime": 12,
+    "notes": "Hearthfire farm Open Farm Day\n\nCome by and pickup your delivery and check out our farm! ",
+    "createdAt": "2025-03-27T18:33:44.396Z",
+    "updatedAt": "2025-03-27T18:33:44.396Z",
+    "id": "bouJH5WKCYv38Ex9JQdb",
+    "googleCalendarEventId": "afap9gvnp9rfdjmba91pasn8tk"
+  },
+  "d769ekrkmaccuofr8tdnu0rdfs": {
+    "date": "2025-04-03T18:00:00.000Z",
+    "note": "🌱 PICKUP ORDER #1742869116701 🌱\n\n📋 CUSTOMER INFORMATION:\n• Name: Kevin ONeill\n• Email: cityzenill@gmail.com\n• Phone: (773) 263-7100\n\n📍 PICKUP DETAILS:\n• Location: Pickup #63760579 - Hearthfire Farm Pickup Availability\n• Date: Wednesday, April 2, 2025\n• Time: 2:00 PM\n• Address: 363 W Hemphill Rd, Stockbridge, GA 30281, USA\n\n🛒 ORDER ITEMS:\n• 1× Coreopsis, Lanceleaf ($10.81 each) = $10.81\n\n💰 ORDER SUMMARY:\n• Subtotal: $10.81\n• Tax: $0.76\n• Pickup Fee: $5.00\n• Total: $16.57\n\n---------------------------\n🔗 ORDER LINKS:\n• Customer Order: https://hearthfire-farm.web.app/orders/1742869116701\n• Admin Order: https://hearthfire-farm.web.app/admin/orders/1742869116701\n",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 0
+      },
+      {
+        "id": "afternoon",
+        "name": "Afternoon",
+        "time": "1pm - 5pm",
+        "available": true,
+        "maxOrders": 3,
+        "currentOrders": 0
+      }
+    ],
+    "zipCodes": [
+      "363 W Hemphill Rd",
+      "Stockbridge",
+      "GA 30281",
+      "USA"
+    ],
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "d769ekrkmaccuofr8tdnu0rdfs",
+    "id": "d769ekrkmaccuofr8tdnu0rdfs",
+    "createdAt": "2025-03-25T02:50:28.864Z",
+    "lastUpdated": {
+      "_seconds": 1742871030,
+      "_nanoseconds": 578000000
+    },
+    "updatedAt": "2025-03-25T02:50:28.864Z"
+  },
+  "eimnrm3bgdqakiftd5uujlc0q4": {
+    "date": "2025-03-28T14:00:00.000Z",
+    "note": "Hearthfire Farm Open Farms Day\nCome by and pick up your order and visit the farm!\n\nPickup location: 363 W Hemphill Rd, Stockbridge, GA 30281, USA\nGoogle Maps: https://maps.google.com/?q=33.5571451,-84.1754326",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 0
+      }
+    ],
+    "zipCodes": [],
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "eimnrm3bgdqakiftd5uujlc0q4",
+    "location": "363 W Hemphill Rd, Stockbridge, GA 30281, USA",
+    "id": "eimnrm3bgdqakiftd5uujlc0q4",
+    "type": "pickup",
+    "createdAt": "2025-03-28T03:52:50.131Z",
+    "lastUpdated": {
+      "_seconds": 1743133970,
+      "_nanoseconds": 140000000
+    },
+    "updatedAt": "2025-03-28T03:52:50.131Z"
+  },
+  "ep0ukgssbto7o8r32ds7kt461k": {
+    "date": "2025-04-03T18:00:00.000Z",
+    "note": "🌱 PICKUP ORDER #1742864180143 🌱\n\n📋 CUSTOMER INFORMATION:\n• Name: Kevin ONeill\n• Email: cityzenill@gmail.com\n• Phone: (773) 263-7100\n\n📍 PICKUP DETAILS:\n• Location: Pickup #15522011 - Hearthfire Farm Pickup Availability\n• Date: Wednesday, April 2, 2025\n• Time: 2:00 PM\n• Address: 363 W Hemphill Rd, Stockbridge, GA 30281, USA\n\n🛒 ORDER ITEMS:\n• 1× Coreopsis, Lanceleaf ($10.81 each) = $10.81\n\n💰 ORDER SUMMARY:\n• Subtotal: $10.81\n• Tax: $0.76\n• Pickup Fee: $5.00\n• Total: $16.57\n\n---------------------------\n🔗 ORDER LINKS:\n• Customer Order: https://hearthfire-farm.web.app/orders/1742864180143\n• Admin Order: https://hearthfire-farm.web.app/admin/orders/1742864180143\n",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 0
+      },
+      {
+        "id": "afternoon",
+        "name": "Afternoon",
+        "time": "1pm - 5pm",
+        "available": true,
+        "maxOrders": 3,
+        "currentOrders": 0
+      }
+    ],
+    "zipCodes": [
+      "363 W Hemphill Rd",
+      "Stockbridge",
+      "GA 30281",
+      "USA"
+    ],
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "ep0ukgssbto7o8r32ds7kt461k",
+    "id": "ep0ukgssbto7o8r32ds7kt461k",
+    "createdAt": "2025-03-25T02:21:05.826Z",
+    "lastUpdated": {
+      "_seconds": 1742869268,
+      "_nanoseconds": 72000000
+    },
+    "updatedAt": "2025-03-25T02:21:05.826Z"
+  },
+  "f8BmgUt1aeMk2KRgzSJc": {
+    "zipCodes": [],
+    "date": "2025-04-15T05:00:00.000Z",
+    "type": "pickup",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "9am-3pm",
+        "time": "9am-3pm",
+        "maxOrders": 2,
+        "available": true
+      }
+    ],
+    "location": "363 W Hemphill Rd, Stockbridge, GA 30281, USA",
+    "locationDetails": {},
+    "cutoffTime": 12,
+    "notes": "",
+    "createdAt": "2025-03-27T17:34:16.075Z",
+    "updatedAt": "2025-03-27T17:34:16.075Z",
+    "id": "f8BmgUt1aeMk2KRgzSJc",
+    "googleCalendarEventId": "m1bvqvki83tp4mprgl7ou4lrlg"
+  },
+  "hvv8g8ob0jte21rt8khiv9si44": {
+    "date": "2025-04-15T14:00:00.000Z",
+    "note": "Hearthfire Farm Open Farms Day\nCome by and pick up your order and visit the farm!\n\nPickup location: 363 W Hemphill Rd, Stockbridge, GA 30281, USA\nGoogle Maps: https://maps.google.com/?q=33.5571451,-84.1754326",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 0
+      }
+    ],
+    "zipCodes": [],
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "hvv8g8ob0jte21rt8khiv9si44",
+    "location": "363 W Hemphill Rd, Stockbridge, GA 30281, USA",
+    "id": "hvv8g8ob0jte21rt8khiv9si44",
+    "type": "pickup",
+    "createdAt": "2025-04-14T17:45:45.217Z",
+    "lastUpdated": {
+      "_seconds": 1744652745,
+      "_nanoseconds": 773000000
+    },
+    "updatedAt": "2025-04-14T17:45:45.217Z"
+  },
+  "ipcmo5k1kqp8ualeo6e02vcb68": {
+    "date": "2025-04-03T18:00:00.000Z",
+    "note": "🌱 PICKUP ORDER #1742863760579 🌱\n\n📋 CUSTOMER INFORMATION:\n• Name: Kevin ONeill\n• Email: cityzenill@gmail.com\n• Phone: (773) 263-7100\n\n📍 PICKUP DETAILS:\n• Location: Pickup #15522011 - Hearthfire Farm Pickup Availability\n• Date: Wednesday, April 2, 2025\n• Time: 2:00 PM\n• Address: 363 W Hemphill Rd, Stockbridge, GA 30281, USA\n\n🛒 ORDER ITEMS:\n• 1× Brown Eyed Susan ($11.36 each) = $11.36\n\n💰 ORDER SUMMARY:\n• Subtotal: $11.36\n• Tax: $0.80\n• Pickup Fee: $5.00\n• Total: $17.16\n\n---------------------------\n🔗 ORDER LINKS:\n• Customer Order: https://hearthfire-farm.web.app/orders/1742863760579\n• Admin Order: https://hearthfire-farm.web.app/admin/orders/1742863760579\n",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 0
+      },
+      {
+        "id": "afternoon",
+        "name": "Afternoon",
+        "time": "1pm - 5pm",
+        "available": true,
+        "maxOrders": 3,
+        "currentOrders": 0
+      }
+    ],
+    "zipCodes": [
+      "363 W Hemphill Rd",
+      "Stockbridge",
+      "GA 30281",
+      "USA"
+    ],
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "ipcmo5k1kqp8ualeo6e02vcb68",
+    "id": "ipcmo5k1kqp8ualeo6e02vcb68",
+    "createdAt": "2025-03-25T02:21:05.826Z",
+    "lastUpdated": {
+      "_seconds": 1742869268,
+      "_nanoseconds": 73000000
+    },
+    "updatedAt": "2025-03-25T02:21:05.826Z"
+  },
+  "j5hclg3q3j5552nemp28btc0bk": {
+    "date": "2025-04-03T18:00:00.000Z",
+    "note": "🌱 PICKUP ORDER #1742511719827 🌱\n\n📋 CUSTOMER INFORMATION:\n• Name: Kevin ONeill\n• Email: cityzenill@gmail.com\n• Phone: (773) 263-7100\n\n📍 PICKUP DETAILS:\n• Location: Hearthfire Farm Pickup Availability\n• Date: Wednesday, April 2, 2025\n• Time: 2:00 PM\n• Address: 363 W Hemphill Rd, Stockbridge, GA 30281, USA\n\n🛒 ORDER ITEMS:\n• 1× Coreopsis, Lanceleaf ($10.81 each) = $10.81\n\n💰 ORDER SUMMARY:\n• Subtotal: $10.81\n• Tax: $0.76\n• Pickup Fee: $5.00\n• Total: $16.57\n\n---------------------------\n🔗 ORDER LINKS:\n• Customer Order: https://hearthfire-farm.web.app/orders/1742511719827\n• Admin Order: https://hearthfire-farm.web.app/admin/orders/1742511719827\n",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 0
+      },
+      {
+        "id": "afternoon",
+        "name": "Afternoon",
+        "time": "1pm - 5pm",
+        "available": true,
+        "maxOrders": 3,
+        "currentOrders": 0
+      }
+    ],
+    "zipCodes": [
+      "363 W Hemphill Rd",
+      "Stockbridge",
+      "GA 30281",
+      "USA"
+    ],
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "j5hclg3q3j5552nemp28btc0bk",
+    "id": "j5hclg3q3j5552nemp28btc0bk",
+    "createdAt": "2025-03-20T23:28:50.066Z",
+    "lastUpdated": {
+      "_seconds": 1742513330,
+      "_nanoseconds": 71000000
+    },
+    "updatedAt": "2025-03-20T23:28:50.066Z"
+  },
+  "k9aeaig8ok0ivuoiob3fabdf9g": {
+    "date": "2025-04-03T18:00:00.000Z",
+    "note": "🌱 PICKUP ORDER #1742866384118 🌱\n\n📋 CUSTOMER INFORMATION:\n• Name: Kevin ONeill\n• Email: cityzenill@gmail.com\n• Phone: (773) 263-7100\n\n📍 PICKUP DETAILS:\n• Location: Pickup #64180143 - Hearthfire Farm Pickup Availability\n• Date: Wednesday, April 2, 2025\n• Time: 2:00 PM\n• Address: 363 W Hemphill Rd, Stockbridge, GA 30281, USA\n\n🛒 ORDER ITEMS:\n• 1× Coreopsis, Lanceleaf ($10.81 each) = $10.81\n\n💰 ORDER SUMMARY:\n• Subtotal: $10.81\n• Tax: $0.76\n• Pickup Fee: $5.00\n• Total: $16.57\n\n---------------------------\n🔗 ORDER LINKS:\n• Customer Order: https://hearthfire-farm.web.app/orders/1742866384118\n• Admin Order: https://hearthfire-farm.web.app/admin/orders/1742866384118\n",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 0
+      },
+      {
+        "id": "afternoon",
+        "name": "Afternoon",
+        "time": "1pm - 5pm",
+        "available": true,
+        "maxOrders": 3,
+        "currentOrders": 0
+      }
+    ],
+    "zipCodes": [
+      "363 W Hemphill Rd",
+      "Stockbridge",
+      "GA 30281",
+      "USA"
+    ],
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "k9aeaig8ok0ivuoiob3fabdf9g",
+    "id": "k9aeaig8ok0ivuoiob3fabdf9g",
+    "createdAt": "2025-03-25T02:21:05.826Z",
+    "lastUpdated": {
+      "_seconds": 1742869268,
+      "_nanoseconds": 73000000
+    },
+    "updatedAt": "2025-03-25T02:21:05.826Z"
+  },
+  "lj2g94u2c9h6k8fi7durqev850": {
+    "date": "2025-04-03T18:00:00.000Z",
+    "note": "🌱 PICKUP ORDER #1742515522011 🌱\n\n📋 CUSTOMER INFORMATION:\n• Name: Kevin ONeill\n• Email: cityzenill@gmail.com\n• Phone: (773) 263-7100\n\n📍 PICKUP DETAILS:\n• Location: Hearthfire Farm Pickup Availability\n• Date: Wednesday, April 2, 2025\n• Time: 2:00 PM\n• Address: 363 W Hemphill Rd, Stockbridge, GA 30281, USA\n\n🛒 ORDER ITEMS:\n• 1× Coreopsis, Lanceleaf ($10.81 each) = $10.81\n\n💰 ORDER SUMMARY:\n• Subtotal: $10.81\n• Tax: $0.76\n• Pickup Fee: $5.00\n• Total: $16.57\n\n---------------------------\n🔗 ORDER LINKS:\n• Customer Order: https://hearthfire-farm.web.app/orders/1742515522011\n• Admin Order: https://hearthfire-farm.web.app/admin/orders/1742515522011\n",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 0
+      },
+      {
+        "id": "afternoon",
+        "name": "Afternoon",
+        "time": "1pm - 5pm",
+        "available": true,
+        "maxOrders": 3,
+        "currentOrders": 0
+      }
+    ],
+    "zipCodes": [
+      "363 W Hemphill Rd",
+      "Stockbridge",
+      "GA 30281",
+      "USA"
+    ],
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "lj2g94u2c9h6k8fi7durqev850",
+    "id": "lj2g94u2c9h6k8fi7durqev850",
+    "createdAt": "2025-03-25T02:21:05.826Z",
+    "lastUpdated": {
+      "_seconds": 1742869268,
+      "_nanoseconds": 73000000
+    },
+    "updatedAt": "2025-03-25T02:21:05.826Z"
+  },
+  "m1bvqvki83tp4mprgl7ou4lrlg": {
+    "date": "2025-04-15T05:00:00.000Z",
+    "note": "Farm pickup at 363 W Hemphill Rd, Stockbridge, GA 30281, USA\n\nPickup hours: 9am-3pm\n\nPickup location: 363 W Hemphill Rd, Stockbridge, GA 30281, USA\n\nNotes:\n- Each pickup takes approximately 15 minutes\n- Please bring your own bags if possible\n- Arrive within your time window for a smoother experience",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 0
+      },
+      {
+        "id": "afternoon",
+        "name": "Afternoon",
+        "time": "1pm - 5pm",
+        "available": true,
+        "maxOrders": 3,
+        "currentOrders": 0
+      }
+    ],
+    "zipCodes": [
+      "363 W Hemphill Rd",
+      "Stockbridge",
+      "GA 30281",
+      "USA"
+    ],
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "m1bvqvki83tp4mprgl7ou4lrlg",
+    "id": "m1bvqvki83tp4mprgl7ou4lrlg",
+    "createdAt": "2025-03-27T17:52:06.957Z",
+    "lastUpdated": {
+      "_seconds": 1743097928,
+      "_nanoseconds": 766000000
+    },
+    "updatedAt": "2025-03-27T17:52:06.957Z"
+  },
+  "r0ka5n7qn74o4tmagt7gmgb9t0": {
+    "date": "2025-04-03T00:00:00.000Z",
+    "note": "PICKUP ORDER #1742509261487\n\nCustomer: Kevin ONeill\nEmail: cityzenill@gmail.com\nPhone: (773) 263-7100\n\nPickup Location: Hearthfire Farm Pickup Availability\nPickup Date: 4/2/2025\nPickup Time: 07:00 PM\n\nOrder Items:\n- 1x Coreopsis, Lanceleaf ($10.81)\n\nOrder Total: $16.57",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 0
+      },
+      {
+        "id": "afternoon",
+        "name": "Afternoon",
+        "time": "1pm - 5pm",
+        "available": true,
+        "maxOrders": 3,
+        "currentOrders": 0
+      }
+    ],
+    "zipCodes": [
+      "363 W Hemphill Rd",
+      "Stockbridge",
+      "GA 30281",
+      "USA"
+    ],
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "r0ka5n7qn74o4tmagt7gmgb9t0",
+    "id": "r0ka5n7qn74o4tmagt7gmgb9t0",
+    "createdAt": "2025-03-20T23:28:50.066Z",
+    "lastUpdated": {
+      "_seconds": 1742513330,
+      "_nanoseconds": 70000000
+    },
+    "updatedAt": "2025-03-20T23:28:50.066Z"
+  },
+  "sbr1chukt4d2rtdkn6ihmju308": {
+    "date": "2025-04-03T18:00:00.000Z",
+    "note": "🌱 PICKUP ORDER #1742865228937 🌱\n\n📋 CUSTOMER INFORMATION:\n• Name: Kevin ONeill\n• Email: cityzenill@gmail.com\n• Phone: (773) 263-7100\n\n📍 PICKUP DETAILS:\n• Location: Pickup #64180143 - Hearthfire Farm Pickup Availability\n• Date: Wednesday, April 2, 2025\n• Time: 2:00 PM\n• Address: 363 W Hemphill Rd, Stockbridge, GA 30281, USA\n\n🛒 ORDER ITEMS:\n• 1× Coreopsis, Lanceleaf ($10.81 each) = $10.81\n\n💰 ORDER SUMMARY:\n• Subtotal: $10.81\n• Tax: $0.76\n• Pickup Fee: $5.00\n• Total: $16.57\n\n---------------------------\n🔗 ORDER LINKS:\n• Customer Order: https://hearthfire-farm.web.app/orders/1742865228937\n• Admin Order: https://hearthfire-farm.web.app/admin/orders/1742865228937\n",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 0
+      },
+      {
+        "id": "afternoon",
+        "name": "Afternoon",
+        "time": "1pm - 5pm",
+        "available": true,
+        "maxOrders": 3,
+        "currentOrders": 0
+      }
+    ],
+    "zipCodes": [
+      "363 W Hemphill Rd",
+      "Stockbridge",
+      "GA 30281",
+      "USA"
+    ],
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "sbr1chukt4d2rtdkn6ihmju308",
+    "id": "sbr1chukt4d2rtdkn6ihmju308",
+    "createdAt": "2025-03-25T02:21:05.827Z",
+    "lastUpdated": {
+      "_seconds": 1742869268,
+      "_nanoseconds": 74000000
+    },
+    "updatedAt": "2025-03-25T02:21:05.827Z"
+  },
+  "uH9wTeGjmKDsUoLu5zsa": {
+    "date": "2025-03-28T04:00:00.000Z",
+    "type": "delivery",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "9am-11am",
+        "time": "9am-11am",
+        "maxOrders": 2,
+        "available": true
+      },
+      {
+        "id": "afternoon",
+        "name": "1pm-5pm",
+        "time": "1pm-5pm",
+        "maxOrders": 2,
+        "available": true
+      },
+      {
+        "id": "afternoon",
+        "name": "11am-1pm",
+        "time": "11am-1pm",
+        "maxOrders": 2,
+        "available": true
+      },
+      {
+        "id": "5pm7pm",
+        "name": "5pm-7pm",
+        "time": "5pm-7pm",
+        "maxOrders": 2,
+        "available": true
+      },
+      {
+        "id": "7pm9pm",
+        "name": "7pm-9pm",
+        "time": "7pm-9pm",
+        "maxOrders": 2,
+        "available": true
+      }
+    ],
+    "zipCodes": [
+      "12345",
+      "12346"
+    ],
+    "location": "",
+    "locationDetails": null,
+    "cutoffTime": 12,
+    "notes": "",
+    "createdAt": "2025-03-28T03:52:48.512Z",
+    "updatedAt": "2025-03-28T03:52:48.512Z",
+    "id": "uH9wTeGjmKDsUoLu5zsa",
+    "googleCalendarEventId": "0aievojd1pmcusjf6nimhc7jck"
+  },
+  "vpjcsg75n9gk7j8eup0gimo1gg": {
+    "date": "2025-03-28T14:00:00.000Z",
+    "note": "Hearthfire Farm Open Farm Day\nCome pick up your order and check out the farm!\n\nPickup location: 363 W Hemphill Rd, Stockbridge, GA 30281, USA\nGoogle Maps: https://maps.google.com/?q=33.5571451,-84.1754326",
+    "cutoffTime": "6pm day before",
+    "googleCalendarEventId": "vpjcsg75n9gk7j8eup0gimo1gg",
+    "id": "vpjcsg75n9gk7j8eup0gimo1gg",
+    "slots": [
+      {
+        "id": "morning",
+        "name": "Morning",
+        "time": "9am - 12pm",
+        "available": true,
+        "maxOrders": 2,
+        "currentOrders": 0
+      }
+    ],
+    "zipCodes": [],
+    "location": "363 W Hemphill Rd, Stockbridge, GA 30281, USA",
+    "type": "pickup",
+    "createdAt": "2025-03-28T03:52:50.131Z",
+    "lastUpdated": {
+      "_seconds": 1743133970,
+      "_nanoseconds": 140000000
+    },
+    "updatedAt": "2025-03-28T03:52:50.131Z"
+  }
+}

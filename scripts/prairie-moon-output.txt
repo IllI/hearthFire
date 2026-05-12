@@ -1,0 +1,308 @@
+=== Prairie Moon Image Crawler ===
+
+Found 46 products without images.
+
+
+[1/46] White Sage (Salvia apiana)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[2/46] Spikenard (Aralia racemosa)
+  ≡ƒöì Searching Prairie Moon...
+  ≡ƒô╖ Found: physocarpus-opulifolius-prairie-ninebark_main_270x360.jpg
+  ≡ƒôÑ Downloading...
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/V0ykYPL8/spikenard.jpg
+  ≡ƒöä Updating product in database...
+  Γ£à Product updated!
+
+[3/46] Pale Purple Coneflower (Echinacea pallida)
+  ≡ƒöì Searching Prairie Moon...
+  ≡ƒô╖ Found: echinacea-angustifolia-narrow-leaved-coneflower_main_270x360.jpg
+  ≡ƒôÑ Downloading...
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/93nmRMxg/pale-purple-coneflower.jpg
+  ≡ƒöä Updating product in database...
+  Γ£à Product updated!
+
+[4/46] Narrow-Leaf Echinacea (Echinacea angustifolia)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[5/46] Motherwort (Leonurus cardiaca)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[6/46] Wormwood (Artemisia absinthium)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[7/46] Milkweed, Tall Green (Asclepias hirtella)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[8/46] Holy Basil, Krishna (Ocimum tenuiflorum)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[9/46] Shrubby St. John's Wort (Hypericum prolificum)
+  ≡ƒöì Searching Prairie Moon...
+  ≡ƒô╖ Found: hypericum-punctatum-dotted-st-Johns-wort_main_270x360.jpg
+  ≡ƒôÑ Downloading...
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/SbJ8PWP/shrubby-st-john-s-wort.jpg
+  ≡ƒöä Updating product in database...
+  Γ£à Product updated!
+
+[10/46] New England Aster (Symphyotrichum novae-angliae)
+  ≡ƒöì Searching Prairie Moon...
+  ≡ƒô╖ Found: symphyotrichum-novae-angliae-new-england-aster_main_483x730.jpg
+  ≡ƒôÑ Downloading...
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/Xnt0JY6/new-england-aster.jpg
+  ≡ƒöä Updating product in database...
+  Γ£à Product updated!
+
+[11/46] Miners Lettuce (Claytonia perfoliata)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[12/46] Yarrow, Colorful (Achillea millefolium)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[13/46] Holy Basil, Rama (Ocimum tenuiflorum)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[14/46] Andrographis (Andrographis paniculata)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[15/46] Lambs Quarters (Chenopodium album)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[16/46] Wild Dagga (Leonotus leonurus)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[17/46] Black Cohosh (Actaea racemosa)
+  ≡ƒöì Searching Prairie Moon...
+  ≡ƒô╖ Found: Actaea-racemosa-black-cohosh-Plant.jpg
+  ≡ƒôÑ Downloading...
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/N2r2QxVR/black-cohosh.jpg
+  ≡ƒöä Updating product in database...
+  Γ£à Product updated!
+
+[18/46] Ashwagandha (Withania somnifera)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[19/46] Bradbury's Monarda (Monarda bradburiana)
+  ≡ƒöì Searching Prairie Moon...
+  ≡ƒô╖ Found: helenium-autumnale-sneezeweed_main_270x360.jpg
+  ≡ƒôÑ Downloading...
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/Cpwg561f/bradbury-s-monarda.jpg
+  ≡ƒöä Updating product in database...
+  Γ£à Product updated!
+
+[20/46] Sunflower, Early (Heliopsis helianthoides)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[21/46] Columbine (Aquilegia canadensis)
+  ≡ƒöì Searching Prairie Moon...
+  ≡ƒô╖ Found: phlox-divaricata-wild-blue-phlox_main_238x360.jpg
+  ≡ƒôÑ Downloading...
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/twwjhwBP/columbine.jpg
+  ≡ƒöä Updating product in database...
+  Γ£à Product updated!
+
+[22/46] St. John's Wort (Hypericum perforatum)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[23/46] Red Aztec Spinach (Chenopodium berlandieri)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[24/46] Holy Basil, Temperate (Ocimum africanum)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[25/46] Meadowsweet (Filipendula ulmaria)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[26/46] New Zealand Spinach (Tetragonia tetragonoides)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[27/46] Dense Blazing Star (Liatris spicata)
+  ≡ƒöì Searching Prairie Moon...
+  ≡ƒô╖ Found: liatris-punctata-dotted-blazing-star_main_270x360.jpg
+  ≡ƒôÑ Downloading...
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/vvcHn1H5/dense-blazing-star.jpg
+  ≡ƒöä Updating product in database...
+  Γ£à Product updated!
+
+[28/46] Lemongrass (Cymbopogon citratus)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[29/46] Lobelia (Lobelia inflata)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[30/46] Chicory, Wild Form (Cichorium intybus)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[31/46] Button Blazing Star (Liatris aspera)
+  ≡ƒöì Searching Prairie Moon...
+  ≡ƒô╖ Found: liatris-punctata-dotted-blazing-star_main_270x360.jpg
+  ≡ƒôÑ Downloading...
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/vvcHn1H5/dense-blazing-star.jpg
+  ≡ƒöä Updating product in database...
+  Γ£à Product updated!
+
+[32/46] Milkweed, Redring (Asclepias variegata)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[33/46] Marshmallow (Althaea officinalis)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[34/46] Common Madder (Rubia tinctorum)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[35/46] Spring Beauty (Claytonia virginica)
+  ≡ƒöì Searching Prairie Moon...
+  ≡ƒô╖ Found: Claytonia-virginica-Spring-Beauty_main.jpg
+  ≡ƒôÑ Downloading...
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/HLXH78Tj/spring-beauty.jpg
+  ≡ƒöä Updating product in database...
+  Γ£à Product updated!
+
+[36/46] Holy Basil, Vana (Ocimum gratissimum)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[37/46] Swamp Aster (Symphyotrichum puniceum)
+  ≡ƒöì Searching Prairie Moon...
+  ≡ƒô╖ Found: aster-umbellatus-flat-topped-aster_main_270x360.jpg
+  ≡ƒôÑ Downloading...
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/992rf9sz/swamp-aster.jpg
+  ≡ƒöä Updating product in database...
+  Γ£à Product updated!
+
+[38/46] Wood Betony (Pedicularis canadensis)
+  ≡ƒöì Searching Prairie Moon...
+  ≡ƒô╖ Found: sisyrinchium-albidum-common-blue-eyed-grass_main_270x360.jpg
+  ≡ƒôÑ Downloading...
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/CpPQTGQd/wood-betony.jpg
+  ≡ƒöä Updating product in database...
+  Γ£à Product updated!
+
+[39/46] Spilanthes (Spilanthes acmella)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[40/46] Chamomile (Matricaria recutita)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[41/46] Mtn. Mint, Hoary (Pycnanthemum incanum)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[42/46] Gotu Kola (Centella asiatica)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[43/46] Mullein (Verbascum thapsus)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[44/46] Hairy Woodmint (Blephilia hirsuta)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+[45/46] White Wild Indigo (Baptisia alba)
+  ≡ƒöì Searching Prairie Moon...
+  ≡ƒô╖ Found: baptisia-alba-white-wild-indigo_main_483x730.jpg
+  ≡ƒôÑ Downloading...
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/nqfqS5hf/white-wild-indigo.jpg
+  ≡ƒöä Updating product in database...
+  Γ£à Product updated!
+
+[46/46] Sorrel, Garden (Rumex acetosa)
+  ≡ƒöì Searching Prairie Moon...
+  ΓÜá∩╕Å  No image found on Prairie Moon
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+=== SUMMARY ===
+
+Γ£à Successfully added images: 13
+   - Spikenard
+   - Pale Purple Coneflower
+   - Shrubby St. John's Wort
+   - New England Aster
+   - Black Cohosh
+   - Bradbury's Monarda
+   - Columbine
+   - Dense Blazing Star
+   - Button Blazing Star
+   - Spring Beauty
+   - Swamp Aster
+   - Wood Betony
+   - White Wild Indigo
+
+Γ¥î Failed/No image found: 33
+   - White Sage: No image found
+   - Narrow-Leaf Echinacea: No image found
+   - Motherwort: No image found
+   - Wormwood: No image found
+   - Milkweed, Tall Green: No image found
+   - Holy Basil, Krishna: No image found
+   - Miners Lettuce: No image found
+   - Yarrow, Colorful: No image found
+   - Holy Basil, Rama: No image found
+   - Andrographis: No image found
+   - Lambs Quarters: No image found
+   - Wild Dagga: No image found
+   - Ashwagandha: No image found
+   - Sunflower, Early: No image found
+   - St. John's Wort: No image found
+   - Red Aztec Spinach: No image found
+   - Holy Basil, Temperate: No image found
+   - Meadowsweet: No image found
+   - New Zealand Spinach: No image found
+   - Lemongrass: No image found
+   - Lobelia: No image found
+   - Chicory, Wild Form: No image found
+   - Milkweed, Redring: No image found
+   - Marshmallow: No image found
+   - Common Madder: No image found
+   - Holy Basil, Vana: No image found
+   - Spilanthes: No image found
+   - Chamomile: No image found
+   - Mtn. Mint, Hoary: No image found
+   - Gotu Kola: No image found
+   - Mullein: No image found
+   - Hairy Woodmint: No image found
+   - Sorrel, Garden: No image found
+
+Results saved to scripts/prairie-moon-results.json

@@ -1,0 +1,254 @@
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.description {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.refreshButton,
+.initButton {
+  padding: 0.5rem 1rem;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.refreshButton:hover,
+.initButton:hover {
+  background-color: #0060df;
+}
+
+.refreshButton:disabled,
+.initButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.initButton {
+  background-color: #14b8a6;
+}
+
+.initButton:hover {
+  background-color: #0d9488;
+}
+
+.error {
+  background-color: #ffebee;
+  border: 1px solid #ffcdd2;
+  color: #d32f2f;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  background-color: #f8f9fa;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  color: #0070f3;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.backButton:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.breadcrumbLink {
+  background: none;
+  border: none;
+  color: #0070f3;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+
+.breadcrumbLink:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbSeparator {
+  margin: 0 0.25rem;
+  color: #777;
+}
+
+.testsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.testPanel {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.testPanel h2 {
+  background-color: #f1f3f5;
+  margin: 0;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.contentPanel {
+  padding: 1rem;
+}
+
+.contentPanel h3 {
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: #444;
+}
+
+.loading {
+  padding: 2rem;
+  text-align: center;
+  color: #777;
+}
+
+.emptyMessage {
+  color: #777;
+  font-style: italic;
+}
+
+.folderList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.folder {
+  padding: 0.75rem;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: center;
+}
+
+.folder:hover {
+  background-color: #f8f9fa;
+}
+
+.folderIcon {
+  font-size: 1.5rem;
+  color: #ffc107;
+}
+
+.fileList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.file {
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.fileInfo {
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.filePreview {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  position: relative;
+}
+
+.filePreview img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.errorPreview {
+  font-size: 0.8rem;
+  color: #dc3545;
+  text-align: center;
+  padding: 1rem;
+}
+
+.fileError {
+  padding: 0.75rem;
+  color: #dc3545;
+  font-size: 0.85rem;
+}
+
+.statusSection {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+}
+
+.statusSection h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.statusSection pre {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow: auto;
+  font-size: 0.85rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .testsContainer {
+    grid-template-columns: 1fr;
+  }
+} 

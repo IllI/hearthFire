@@ -1,0 +1,137 @@
+=== Wikipedia Image Fetcher ===
+
+Found 28 products still missing images.
+
+[1/28] White Sage (Salvia apiana)
+  ≡ƒô╖ Found Wiki URL: https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Salvia_apiana_1.jpg/960px-Salvia_apiana_1.jpg
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/xtsL6nD9/white-sage.jpg
+[2/28] Motherwort (Leonurus cardiaca)
+  ≡ƒô╖ Found Wiki URL: https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Motherwort.jpg/960px-Motherwort.jpg
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/KxSqSjdf/motherwort.jpg
+[3/28] Wormwood (Artemisia absinthium)
+  ≡ƒô╖ Found Wiki URL: https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Artemisia_absinthium_P1210748.jpg/960px-Artemisia_absinthium_P1210748.jpg
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/zhJyW26D/wormwood.jpg
+[4/28] Holy Basil, Krishna (Ocimum tenuiflorum)
+  ≡ƒô╖ Found Wiki URL: https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Tulsi_or_Tulasi_Holy_basil.jpg/960px-Tulsi_or_Tulasi_Holy_basil.jpg
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/23hTKdz8/holy-basil-krishna.jpg
+[5/28] Miners Lettuce (Claytonia perfoliata)
+  ≡ƒô╖ Found Wiki URL: https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Claytonia_perfoliata_6641.JPG/960px-Claytonia_perfoliata_6641.JPG
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/4bc6DJJ/miners-lettuce.jpg
+[6/28] Yarrow, Colorful (Achillea millefolium)
+  ≡ƒô╖ Found Wiki URL: https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Achillea_millefolium_%28bright%29.jpg/960px-Achillea_millefolium_%28bright%29.jpg
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/5XGXcgT9/yarrow-colorful.jpg
+[7/28] Holy Basil, Rama (Ocimum tenuiflorum)
+  ≡ƒô╖ Found Wiki URL: https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Tulsi_or_Tulasi_Holy_basil.jpg/960px-Tulsi_or_Tulasi_Holy_basil.jpg
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/23hTKdz8/holy-basil-krishna.jpg
+[8/28] Andrographis (Andrographis paniculata)
+  ≡ƒô╖ Found Wiki URL: https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Andrographis_paniculata_%28Kalpa%29_in_Narshapur_forest%2C_AP_W2_IMG_0867.jpg/683px-Andrographis_paniculata_%28Kalpa%29_in_Narshapur_forest%2C_AP_W2_IMG_0867.jpg
+  ≡ƒôñ Uploading to ImgBB...
+  Γ¥î Error: ImgBB upload failed: {"status_code":400,"error":{"message":"Unsupported or unrecognized file format","code":415},"status_txt":"Bad Request"}
+[9/28] Lambs Quarters (Chenopodium album)
+  ≡ƒô╖ Found Wiki URL: https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Melganzenvoet_bloeiwijze_Chenopodium_album.jpg/960px-Melganzenvoet_bloeiwijze_Chenopodium_album.jpg
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/DPZ8sfwJ/lambs-quarters.jpg
+[10/28] Wild Dagga (Leonotus leonurus)
+  Γ¥î No image found on Wikipedia
+[11/28] Ashwagandha (Withania somnifera)
+  ≡ƒô╖ Found Wiki URL: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/WithaniaFruit.jpg/960px-WithaniaFruit.jpg
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/YBSRW05V/ashwagandha.jpg
+[12/28] St. John's Wort (Hypericum perforatum)
+  ≡ƒô╖ Found Wiki URL: https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/%28MHNT%29_Hypericum_perforatum_flower_and_buttons.jpg/960px-%28MHNT%29_Hypericum_perforatum_flower_and_buttons.jpg
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/394CHZGS/st-john-s-wort.jpg
+[13/28] Red Aztec Spinach (Chenopodium berlandieri)
+  ≡ƒô╖ Found Wiki URL: https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Chenopodium_berlandieri_NPS-1.jpg/960px-Chenopodium_berlandieri_NPS-1.jpg
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/svQ8frkM/red-aztec-spinach.jpg
+[14/28] Holy Basil, Temperate (Ocimum africanum)
+  Γ¥î No image found on Wikipedia
+[15/28] Meadowsweet (Filipendula ulmaria)
+  ≡ƒô╖ Found Wiki URL: https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/20140715Filipendula_ulmaria.jpg/960px-20140715Filipendula_ulmaria.jpg
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/s9ksSFY8/meadowsweet.jpg
+[16/28] New Zealand Spinach (Tetragonia tetragonoides)
+  Γ¥î No image found on Wikipedia
+[17/28] Lemongrass (Cymbopogon citratus)
+  ≡ƒô╖ Found Wiki URL: https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gardenology.org-IMG_2892_rbgs11jan.jpg/960px-Gardenology.org-IMG_2892_rbgs11jan.jpg
+  ≡ƒôñ Uploading to ImgBB...
+  Γ¥î Error: ImgBB upload failed: {"status_code":400,"error":{"message":"Unsupported or unrecognized file format","code":415},"status_txt":"Bad Request"}
+[18/28] Chicory, Wild Form (Cichorium intybus)
+  Γ¥î No image found on Wikipedia
+[19/28] Milkweed, Redring (Asclepias variegata)
+  ≡ƒô╖ Found Wiki URL: https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Asclepias_variegata_2.jpg/960px-Asclepias_variegata_2.jpg
+  ≡ƒôñ Uploading to ImgBB...
+  Γ¥î Error: ImgBB upload failed: {"status_code":400,"error":{"message":"Unsupported or unrecognized file format","code":415},"status_txt":"Bad Request"}
+[20/28] Marshmallow (Althaea officinalis)
+  ≡ƒô╖ Found Wiki URL: https://upload.wikimedia.org/wikipedia/commons/f/ff/Althaea_officinalis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-008.jpg
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/4wkdSZjR/marshmallow.jpg
+[21/28] Common Madder (Rubia tinctorum)
+  ≡ƒô╖ Found Wiki URL: https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Rubia_tinctorum_flowers.jpg/960px-Rubia_tinctorum_flowers.jpg
+  ≡ƒôñ Uploading to ImgBB...
+  Γ¥î Error: ImgBB upload failed: {"status_code":400,"error":{"message":"Unsupported or unrecognized file format","code":415},"status_txt":"Bad Request"}
+[22/28] Holy Basil, Vana (Ocimum gratissimum)
+  ≡ƒô╖ Found Wiki URL: https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Starr_030202-0053_Ocimum_gratissimum.jpg/960px-Starr_030202-0053_Ocimum_gratissimum.jpg
+  ≡ƒôñ Uploading to ImgBB...
+  Γ¥î Error: ImgBB upload failed: {"status_code":400,"error":{"message":"Unsupported or unrecognized file format","code":415},"status_txt":"Bad Request"}
+[23/28] Spilanthes (Spilanthes acmella)
+  Γ¥î No image found on Wikipedia
+[24/28] Chamomile (Matricaria recutita)
+  ≡ƒô╖ Found Wiki URL: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Matricaria_February_2008-1.jpg/960px-Matricaria_February_2008-1.jpg
+  ≡ƒôñ Uploading to ImgBB...
+  Γ¥î Error: ImgBB upload failed: {"status_code":400,"error":{"message":"Unsupported or unrecognized file format","code":415},"status_txt":"Bad Request"}
+[25/28] Gotu Kola (Centella asiatica)
+  ≡ƒô╖ Found Wiki URL: https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Centella_asiatica_%28%E0%A6%A5%E0%A6%BE%E0%A6%A8%E0%A6%95%E0%A7%81%E0%A6%A8%E0%A6%BF%29_%283%29.jpg/960px-Centella_asiatica_%28%E0%A6%A5%E0%A6%BE%E0%A6%A8%E0%A6%95%E0%A7%81%E0%A6%A8%E0%A6%BF%29_%283%29.jpg
+  ≡ƒôñ Uploading to ImgBB...
+  Γ¥î Error: ImgBB upload failed: {"status_code":400,"error":{"message":"Unsupported or unrecognized file format","code":415},"status_txt":"Bad Request"}
+[26/28] Mullein (Verbascum thapsus)
+  ≡ƒô╖ Found Wiki URL: https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Starr_040723-0030_Verbascum_thapsus.jpg/960px-Starr_040723-0030_Verbascum_thapsus.jpg
+  ≡ƒôñ Uploading to ImgBB...
+  Γ£à ImgBB URL: https://i.ibb.co/jPf6bLhd/mullein.jpg
+[27/28] Hairy Woodmint (Blephilia hirsuta)
+  ≡ƒô╖ Found Wiki URL: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Blephilia_hirsuta_inflorescence_and_upper_cauline_leaves_1.jpg/960px-Blephilia_hirsuta_inflorescence_and_upper_cauline_leaves_1.jpg
+  ≡ƒôñ Uploading to ImgBB...
+  Γ¥î Error: ImgBB upload failed: {"status_code":400,"error":{"message":"Unsupported or unrecognized file format","code":415},"status_txt":"Bad Request"}
+[28/28] Sorrel, Garden (Rumex acetosa)
+  Γ¥î No image found on Wikipedia
+
+=== SUMMARY ===
+Success: 14
+  + White Sage
+  + Motherwort
+  + Wormwood
+  + Holy Basil, Krishna
+  + Miners Lettuce
+  + Yarrow, Colorful
+  + Holy Basil, Rama
+  + Lambs Quarters
+  + Ashwagandha
+  + St. John's Wort
+  + Red Aztec Spinach
+  + Meadowsweet
+  + Marshmallow
+  + Mullein
+
+Failed: 14
+  - Andrographis
+  - Wild Dagga
+  - Holy Basil, Temperate
+  - New Zealand Spinach
+  - Lemongrass
+  - Chicory, Wild Form
+  - Milkweed, Redring
+  - Common Madder
+  - Holy Basil, Vana
+  - Spilanthes
+  - Chamomile
+  - Gotu Kola
+  - Hairy Woodmint
+  - Sorrel, Garden

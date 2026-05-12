@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OpenStreetMap with Leaflet Test</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+  <style>
+    #map { height: 400px; width: 100%; }
+    #search-container { margin-bottom: 10px; }
+    #address-input { width: 100%; padding: 8px; }
+    #search-results { 
+      position: absolute; 
+      width: 100%; 
+      background: white; 
+      border: 1px solid #ccc; 
+      max-height: 300px; 
+      overflow-y: auto; 
+      z-index: 1000;
+      display: none;
+    }
+    .search-result { padding: 8px; cursor: pointer; }
+    .search-result:hover { background-color: #f0f0f0; }
+    .success { color: green; margin: 10px 0; padding: 10px; border: 1px solid green; }
+    .error { color: red; margin: 10px 0; padding: 10px; border: 1px solid red; }
+  </style>
+</head>
+<body>
+  <h1>OpenStreetMap Address Lookup</h1>
+  
+  <div id="messages"></div>
+  
+  <div id="search-container" style="position: relative;">
+    <input id="address-input" type="text" placeholder="Enter an address..." />
+    <div id="search-results"></div>
+  </div>
+  
+  <div id="map"></div>
+  
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+  
+  <script>
+    // Initialize the map
+    const map = L.map('map').setView([40.7, -74], 10);
+    
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    
+    // Initialize the geocoder
+    const geocoder = L.Control.Geocoder.nominatim();
+    
+    // Add a marker for selected location
+    let marker;
+    
+    // Handle address input
+    const addressInput = document.getElementById('address-input');
+    const searchResults = document.getElementById('search-results');
+    const messages = document.getElementById('messages');
+    
+    // Function to show a message
+    function showMessage(message, type) {
+      messages.innerHTML += `<div class="${type}">${message}</div>`;
+    }
+    
+    // Listen for input in the address field
+    addressInput.addEventListener('input', function() {
+      const query = this.value.trim();
+      
+      if (query.length < 3) {
+        searchResults.style.display = 'none';
+        return;
+      }
+      
+      // Perform geocoding
+      geocoder.geocode(query, function(results) {
+        searchResults.innerHTML = '';
+        
+        if (results.length === 0) {
+          searchResults.style.display = 'none';
+          return;
+        }
+        
+        results.forEach(function(result) {
+          const div = document.createElement('div');
+          div.className = 'search-result';
+          div.textContent = result.name;
+          div.addEventListener('click', function() {
+            // Set the input value
+            addressInput.value = result.name;
+            
+            // Clear results
+            searchResults.style.display = 'none';
+            
+            // Update map
+            const latlng = result.center;
+            map.setView(latlng, 15);
+            
+            // Add marker
+            if (marker) {
+              marker.setLatLng(latlng);
+            } else {
+              marker = L.marker(latlng).addTo(map);
+            }
+            
+            // Show success message
+            showMessage(`Selected address: ${result.name}`, 'success');
+          });
+          
+          searchResults.appendChild(div);
+        });
+        
+        searchResults.style.display = 'block';
+      });
+    });
+    
+    // Hide results when clicking outside
+    document.addEventListener('click', function(e) {
+      if (e.target !== addressInput && e.target !== searchResults) {
+        searchResults.style.display = 'none';
+      }
+    });
+    
+    // Show initial success message
+    showMessage('OpenStreetMap and Leaflet initialized successfully!', 'success');
+  </script>
+</body>
+</html> 

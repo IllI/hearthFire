@@ -1,0 +1,31 @@
+{
+  "about": {
+    "heroImage": "/uploads/general/91c33c94-27c7-4756-90f0-b17877d1c334.jpg",
+    "title": "About Hearthfire Farm",
+    "lastUpdated": "2025-03-26T23:29:39.470Z",
+    "updatedBy": "uQALpGDHVVUiSYOm6DXCDux0sym2",
+    "content": "<p>Welcome to Hearthfire Farm, where we deliver fresh, organic produce directly from our farm to your doorstep. We're a local Georgia farm growing the world's plants for local Georgians.</p><p>Our mission is to provide the highest quality, locally grown organic produce to our community while practicing sustainable farming methods that nurture the land for future generations.</p><h2>Our Story</h2><p>Hearthfire Farm began in 2018 with a simple idea: create a direct connection between local farmers and the community they serve. What started as a small family farm has grown into a thriving operation that serves hundreds of families across the region.</p><h2>Our Values</h2><ul><li><p><strong>Sustainability</strong> - We use regenerative farming practices that build soil health and sequester carbon.</p></li><li><p><strong>Community</strong> - We believe in building strong local food systems that connect people to the source of their food.</p></li><li><p><strong>Quality</strong> - We grow exceptional produce using organic methods that prioritize flavor and nutrition.</p></li></ul><p>Thank you for supporting local agriculture and being part of our journey!</p>"
+  },
+  "home": {
+    "mainImage": "/uploads/general/91c33c94-27c7-4756-90f0-b17877d1c334.jpg",
+    "title": "Welcome to Hearthfire Farm",
+    "ctaButton": {
+      "link": "/schedule",
+      "text": "Check to see if we deliver to your area!"
+    },
+    "subtitle": "Where We're Cultivating Resilience ",
+    "updatedBy": "uQALpGDHVVUiSYOm6DXCDux0sym2",
+    "lastUpdated": "2026-02-13T18:51:18.427Z",
+    "sections": [
+      {
+        "button": {
+          "text": "View Our Products",
+          "link": "/products"
+        },
+        "image": "https://i.ibb.co/CsttmGZz/hero-jpg.jpg",
+        "content": "<h3>We have spring and summer veggies ready to plant and over 40 species of Edible, Medicinal or Native Perennials coming soon!</h3><h3></h3><h3>Our Availability is increasing everyday. Click the link below to browse our collection of plants. You can pre-order and pickup at a the Nursery or catch us at a Plant Sale or Farmers Market near you!</h3>",
+        "title": "Spring has Sprung!"
+      }
+    ]
+  }
+}
