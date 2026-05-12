@@ -1,0 +1,26 @@
+{
+  "culinary-herbs": {
+    "name": "Culinary Herbs",
+    "slug": "culinary-herbs",
+    "description": "Flavorful herbs for cooking, teas, and other culinary uses, adding both taste and nutritional benefits to your meals.",
+    "image": "/images/categories/culinary-herbs.jpg"
+  },
+  "medicinal-herbs": {
+    "name": "Medicinal Herbs",
+    "slug": "medicinal-herbs",
+    "description": "Plants with traditional medicinal properties, used for centuries in herbal remedies and healing traditions.",
+    "image": "/images/categories/medicinal-herbs.jpg"
+  },
+  "native-plants": {
+    "name": "Native Plants",
+    "slug": "native-plants",
+    "description": "Native plants adapted to local conditions, supporting biodiversity and providing habitat for wildlife.",
+    "image": "/images/categories/native-plants.jpg"
+  },
+  "pollinator-friendly": {
+    "name": "Pollinator Friendly",
+    "slug": "pollinator-friendly",
+    "description": "Plants that attract and support pollinators like bees, butterflies, and hummingbirds, helping maintain ecosystem health.",
+    "image": "/images/categories/pollinator-friendly.jpg"
+  }
+}

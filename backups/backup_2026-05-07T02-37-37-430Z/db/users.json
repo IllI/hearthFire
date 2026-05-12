@@ -1,0 +1,198 @@
+{
+  "admin-user-1": {
+    "orders": [],
+    "name": "Admin User",
+    "email": "admin@example.com",
+    "phone": "555-789-0123",
+    "role": "admin",
+    "createdAt": {
+      "_seconds": 1741117262,
+      "_nanoseconds": 932000000
+    },
+    "lastLogin": null,
+    "metadata": {
+      "creationMethod": "migration-script"
+    }
+  },
+  "customer-1741117263224-0": {
+    "name": "John Doe",
+    "email": "john@example.com",
+    "orders": [
+      "AfW4BYJUSsyxpBNerrDZ"
+    ],
+    "orderIds": [
+      "AfW4BYJUSsyxpBNerrDZ"
+    ],
+    "orderCount": 1,
+    "totalSpent": 16.31,
+    "address": {
+      "street": "123 Farm Lane",
+      "city": "Farmville",
+      "state": "CA",
+      "zip": "90210"
+    },
+    "lastOrderDate": {
+      "_seconds": 1740422972,
+      "_nanoseconds": 245000000
+    },
+    "createdAt": {
+      "_seconds": 1741117263,
+      "_nanoseconds": 224000000
+    },
+    "role": "customer",
+    "metadata": {
+      "source": "order-migration",
+      "firstOrderId": "AfW4BYJUSsyxpBNerrDZ"
+    }
+  },
+  "customer-1741117263397-1": {
+    "name": "Bob Johnson",
+    "email": "bob@example.com",
+    "orders": [
+      "C85uTTUTImQ8Xamnxsxs"
+    ],
+    "orderIds": [
+      "C85uTTUTImQ8Xamnxsxs"
+    ],
+    "orderCount": 1,
+    "totalSpent": 33.56,
+    "address": {
+      "street": "789 Orchard Street",
+      "city": "Cropfield",
+      "state": "CA",
+      "zip": "90215"
+    },
+    "lastOrderDate": {
+      "_seconds": 1740682172,
+      "_nanoseconds": 245000000
+    },
+    "createdAt": {
+      "_seconds": 1741117263,
+      "_nanoseconds": 224000000
+    },
+    "role": "customer",
+    "metadata": {
+      "source": "order-migration",
+      "firstOrderId": "C85uTTUTImQ8Xamnxsxs"
+    }
+  },
+  "customer-1741117263524-2": {
+    "name": "Jane Smith",
+    "email": "jane@example.com",
+    "orders": [
+      "mBmUJF6Q0VA7nRjJzNsM"
+    ],
+    "orderIds": [
+      "mBmUJF6Q0VA7nRjJzNsM"
+    ],
+    "orderCount": 1,
+    "totalSpent": 28.72,
+    "address": {
+      "street": "456 Garden Avenue",
+      "city": "Harvestville",
+      "state": "CA",
+      "zip": "90211"
+    },
+    "lastOrderDate": {
+      "_seconds": 1740595772,
+      "_nanoseconds": 245000000
+    },
+    "createdAt": {
+      "_seconds": 1741117263,
+      "_nanoseconds": 224000000
+    },
+    "role": "customer",
+    "metadata": {
+      "source": "order-migration",
+      "firstOrderId": "mBmUJF6Q0VA7nRjJzNsM"
+    }
+  },
+  "customer-1741117263656-3": {
+    "name": "Dev User",
+    "email": "dev@example.com",
+    "orders": [
+      "order-1741025296501",
+      "order-1741025351549"
+    ],
+    "orderIds": [
+      "order-1741025296501",
+      "order-1741025351549"
+    ],
+    "orderCount": 2,
+    "totalSpent": 28.15,
+    "address": {
+      "zip": "90210",
+      "street": "123 Main St",
+      "state": "CA",
+      "city": "Farmville"
+    },
+    "lastOrderDate": {
+      "_seconds": 1741025351,
+      "_nanoseconds": 555000000
+    },
+    "createdAt": {
+      "_seconds": 1741117263,
+      "_nanoseconds": 224000000
+    },
+    "role": "customer",
+    "metadata": {
+      "source": "order-migration",
+      "firstOrderId": "order-1741025296501"
+    }
+  },
+  "customer-1741117263772-4": {
+    "name": "v0",
+    "email": "v0@v",
+    "orders": [
+      "order-1741027924594"
+    ],
+    "orderIds": [
+      "order-1741027924594"
+    ],
+    "orderCount": 1,
+    "totalSpent": 17.24,
+    "address": {
+      "street": "1223 North Cleaver Street",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60642"
+    },
+    "lastOrderDate": {
+      "_seconds": 1741027924,
+      "_nanoseconds": 644000000
+    },
+    "createdAt": {
+      "_seconds": 1741117263,
+      "_nanoseconds": 224000000
+    },
+    "role": "customer",
+    "metadata": {
+      "source": "order-migration",
+      "firstOrderId": "order-1741027924594"
+    }
+  },
+  "mFW4UTAPk6hWNyCUqYCPdWCRvs83": {
+    "orders": [],
+    "favoriteProducts": [],
+    "name": "Timothy Hayes",
+    "email": "thayes1318@gmail.com",
+    "phone": "6788868469",
+    "role": "admin",
+    "createdAt": {
+      "_seconds": 1742096048,
+      "_nanoseconds": 0
+    }
+  },
+  "uQALpGDHVVUiSYOm6DXCDux0sym2": {
+    "orders": [],
+    "favoriteProducts": [],
+    "name": "Kevin O'Neill",
+    "email": "cityzenill@yahoo.com",
+    "phone": "7732637100",
+    "role": "admin",
+    "createdAt": {
+      "_seconds": 1741576910,
+      "_nanoseconds": 423000000
+    }
+  }
+}

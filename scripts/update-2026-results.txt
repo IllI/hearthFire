@@ -1,0 +1,204 @@
+=== 2026 Hearthfire Seeding Chart - Database Update ===
+
+Current database has 205 products.
+
+Processing 46 new products from the 2026 seeding chart...
+
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+[1/46] Yarrow, Colorful (Achillea millefolium)
+  ΓÅ¡∩╕Å  Already exists in DB as "Yarrow, Colorful" (FhnzUCgLCKsOSQpRqYdU)
+
+[2/46] Black Cohosh (Actaea racemosa)
+  ΓÅ¡∩╕Å  Already exists in DB as "Black Cohosh" (PYZ7kAOmzfIknc5WRXzI)
+
+[3/46] Marshmallow (Althaea officinalis)
+  ΓÅ¡∩╕Å  Already exists in DB as "Marshmallow" (mjlEbFMOkhk9PbeEzysd)
+
+[4/46] Andrographis (Andrographis paniculata)
+  ΓÅ¡∩╕Å  Already exists in DB as "Andrographis" (KSFvvN4C25A3JKLRucPj)
+
+[5/46] Columbine (Aquilegia canadensis)
+  ΓÅ¡∩╕Å  Already exists in DB as "Columbine" (XCl6vAwVPp9HmiqYYvZf)
+
+[6/46] Spikenard (Aralia racemosa)
+  ΓÅ¡∩╕Å  Already exists in DB as "Spikenard" (0hmbSfftXfSeaUi5ByB9)
+
+[7/46] Wormwood (Artemisia absinthium)
+  ΓÅ¡∩╕Å  Already exists in DB as "Wormwood" (5oSqIhofhUGzfXQAs15h)
+
+[8/46] Milkweed, Tall Green (Asclepias hirtella)
+  ΓÅ¡∩╕Å  Already exists in DB as "Milkweed, Tall Green" (5sVgV6eeo95Ed4DoqSKg)
+
+[9/46] Milkweed, Redring (Asclepias variegata)
+  ΓÅ¡∩╕Å  Already exists in DB as "Milkweed, Redring" (lGZmwsBR0LKf7iY6ooq4)
+
+[10/46] White Wild Indigo (Baptisia alba)
+  ΓÅ¡∩╕Å  Already exists in DB as "White Wild Indigo" (zQGcgM297ftotEfk9tJu)
+
+[11/46] Hairy Woodmint (Blephilia hirsuta)
+  ΓÅ¡∩╕Å  Already exists in DB as "Hairy Woodmint" (xyeOdP9Hbz9yLcj1rQQz)
+
+[12/46] Gotu Kola (Centella asiatica)
+  ΓÅ¡∩╕Å  Already exists in DB as "Gotu Kola" (x8XmlOlFtCHU18uTRMZ7)
+
+[13/46] Lambs Quarters (Chenopodium album)
+  ΓÅ¡∩╕Å  Already exists in DB as "Lambs Quarters" (KfLmtnPifk1Kcsg8WTaE)
+
+[14/46] Red Aztec Spinach (Chenopodium berlandieri)
+  ΓÅ¡∩╕Å  Already exists in DB as "Red Aztec Spinach" (YOJUZdb4Spj4CBdhGpMo)
+
+[15/46] Chicory, Wild Form (Cichorium intybus)
+  ΓÅ¡∩╕Å  Already exists in DB as "Chicory, Wild Form" (gZeOJn4ArVqGlwg8VZxG)
+
+[16/46] Miners Lettuce (Claytonia perfoliata)
+  ΓÅ¡∩╕Å  Already exists in DB as "Miners Lettuce" (F2LduzjI8qAAQbEw0oPQ)
+
+[17/46] Spring Beauty (Claytonia virginica)
+  ΓÅ¡∩╕Å  Already exists in DB as "Spring Beauty" (rZ87guKL85MsnRPlBMZ0)
+
+[18/46] Lemongrass (Cymbopogon citratus)
+  ΓÅ¡∩╕Å  Already exists in DB as "Lemongrass" (deWQ3dbhLUF8m7IN77SM)
+
+[19/46] Narrow-Leaf Echinacea (Echinacea angustifolia)
+  ΓÅ¡∩╕Å  Already exists in DB as "Narrow-Leaf Echinacea" (4ezd19kCL4nLg8w0W2k7)
+
+[20/46] Pale Purple Coneflower (Echinacea pallida)
+  ΓÅ¡∩╕Å  Already exists in DB as "Pale Purple Coneflower" (1XBsnKRrO61XdfdaKjRm)
+
+[21/46] Sunflower, Early (Heliopsis helianthoides)
+  ΓÅ¡∩╕Å  Already exists in DB as "Sunflower, Early" (TEXLrARfBFaLtoezeQnI)
+
+[22/46] St. John's Wort (Hypericum perforatum)
+  ΓÅ¡∩╕Å  Already exists in DB as "St. John's Wort" (XS34etqTQ91MKmC3BzDO)
+
+[23/46] Shrubby St. John's Wort (Hypericum prolificum)
+  ΓÅ¡∩╕Å  Already exists in DB as "Shrubby St. John's Wort" (CaFWC8vy7CviKLdAwugi)
+
+[24/46] Wild Dagga (Leonotus leonurus)
+  ΓÅ¡∩╕Å  Already exists in DB as "Wild Dagga" (OFNwSnfw3sxjOhINhY6U)
+
+[25/46] Motherwort (Leonurus cardiaca)
+  ΓÅ¡∩╕Å  Already exists in DB as "Motherwort" (58IygPGuJp0EOpHzNM30)
+
+[26/46] Button Blazing Star (Liatris aspera)
+  ΓÅ¡∩╕Å  Already exists in DB as "Button Blazing Star" (kV600eDfSqxgXGGcw0LR)
+
+[27/46] Dense Blazing Star (Liatris spicata)
+  ΓÅ¡∩╕Å  Already exists in DB as "Dense Blazing Star" (dQqk3jQkd37pO0PxM1iT)
+
+[28/46] Lobelia (Lobelia inflata)
+  ΓÅ¡∩╕Å  Already exists in DB as "Lobelia" (gQAfVzXmOEocxYPXGoB0)
+
+[29/46] Chamomile (Matricaria recutita)
+  ΓÅ¡∩╕Å  Already exists in DB as "Chamomile" (uIpcWezTyDjgBhs5GS4N)
+
+[30/46] Bradbury's Monarda (Monarda bradburiana)
+  ΓÅ¡∩╕Å  Already exists in DB as "Bradbury's Monarda" (Sb25JKwZI8mKw2wCxsqu)
+
+[31/46] Holy Basil, Temperate (Ocimum africanum)
+  ΓÅ¡∩╕Å  Already exists in DB as "Holy Basil, Temperate" (Z6xtZriC1bbAMksHhVL4)
+
+[32/46] Holy Basil, Vana (Ocimum gratissimum)
+  ΓÅ¡∩╕Å  Already exists in DB as "Holy Basil, Vana" (reqaQZI7aCXkGvcjaFT1)
+
+[33/46] Holy Basil, Krishna (Ocimum tenuiflorum)
+  ΓÅ¡∩╕Å  Already exists in DB as "Holy Basil, Krishna" (6rC5hJA2zjY5yu8AdpsD)
+
+[34/46] Holy Basil, Rama (Ocimum tenuiflorum)
+  ΓÅ¡∩╕Å  Already exists in DB as "Holy Basil, Rama" (FuyaFBh3f7p03c8H3JKO)
+
+[35/46] Wood Betony (Pedicularis canadensis)
+  ΓÅ¡∩╕Å  Already exists in DB as "Wood Betony" (sWTx852BQlZTIpuJOz4s)
+
+[36/46] Mtn. Mint, Hoary (Pycnanthemum incanum)
+  ΓÅ¡∩╕Å  Already exists in DB as "Mtn. Mint, Hoary" (uUtqyOZf2saIby9wLSqe)
+
+[37/46] Common Madder (Rubia tinctorum)
+  ΓÅ¡∩╕Å  Already exists in DB as "Common Madder" (r6WRjQtuUq9aoBuvEeyM)
+
+[38/46] Sorrel, Garden (Rumex acetosa)
+  ΓÅ¡∩╕Å  Already exists in DB as "Sorrel, Garden" (zwfWV6Xg09gLVDPgFyD6)
+
+[39/46] White Sage (Salvia apiana)
+  ΓÅ¡∩╕Å  Already exists in DB as "White Sage" (06YqUHkvAwOkUR5HEJvw)
+
+[40/46] Spilanthes (Spilanthes acmella)
+  ΓÅ¡∩╕Å  Already exists in DB as "Spilanthes" (tx3IYEZkApcjDkQng8Np)
+
+[41/46] Meadowsweet (Filipendula ulmaria)
+  ΓÅ¡∩╕Å  Already exists in DB as "Meadowsweet" (a929t96wPDnnuGUYItk7)
+
+[42/46] New England Aster (Symphyotrichum novae-angliae)
+  ΓÅ¡∩╕Å  Already exists in DB as "New England Aster" (CjWjhqibpsVPv8LDGm06)
+
+[43/46] Swamp Aster (Symphyotrichum puniceum)
+  ΓÅ¡∩╕Å  Already exists in DB as "Swamp Aster" (sFq9j1THo5hdFubCqY2L)
+
+[44/46] New Zealand Spinach (Tetragonia tetragonoides)
+  ΓÅ¡∩╕Å  Already exists in DB as "New Zealand Spinach" (aKVE4hpdXHN6vDTzn0r9)
+
+[45/46] Mullein (Verbascum thapsus)
+  ΓÅ¡∩╕Å  Already exists in DB as "Mullein" (xwnrq9Yav3PPiMGT34HI)
+
+[46/46] Ashwagandha (Withania somnifera)
+  ΓÅ¡∩╕Å  Already exists in DB as "Ashwagandha" (RGTSN3ayEYwdwLhYAUlH)
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+=== SUMMARY ===
+
+Γ£à Created: 0 new products
+
+ΓÅ¡∩╕Å  Skipped: 46 (already existed)
+   - Yarrow, Colorful
+   - Black Cohosh
+   - Marshmallow
+   - Andrographis
+   - Columbine
+   - Spikenard
+   - Wormwood
+   - Milkweed, Tall Green
+   - Milkweed, Redring
+   - White Wild Indigo
+   - Hairy Woodmint
+   - Gotu Kola
+   - Lambs Quarters
+   - Red Aztec Spinach
+   - Chicory, Wild Form
+   - Miners Lettuce
+   - Spring Beauty
+   - Lemongrass
+   - Narrow-Leaf Echinacea
+   - Pale Purple Coneflower
+   - Sunflower, Early
+   - St. John's Wort
+   - Shrubby St. John's Wort
+   - Wild Dagga
+   - Motherwort
+   - Button Blazing Star
+   - Dense Blazing Star
+   - Lobelia
+   - Chamomile
+   - Bradbury's Monarda
+   - Holy Basil, Temperate
+   - Holy Basil, Vana
+   - Holy Basil, Krishna
+   - Holy Basil, Rama
+   - Wood Betony
+   - Mtn. Mint, Hoary
+   - Common Madder
+   - Sorrel, Garden
+   - White Sage
+   - Spilanthes
+   - Meadowsweet
+   - New England Aster
+   - Swamp Aster
+   - New Zealand Spinach
+   - Mullein
+   - Ashwagandha
+
+≡ƒôè 2026 Seeding Chart Coverage:
+   Total plants in chart: 114
+   Already in DB: ~68
+   New products added: 0
+   Total products in DB after update: 205

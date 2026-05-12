@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "name": "Fresh Apples",
+    "description": "Crisp and juicy local apples",
+    "price": 2.99,
+    "category": "Fruits",
+    "image": "apples.jpg",
+    "quantity": 100
+  },
+  {
+    "id": "2",
+    "name": "Organic Carrots",
+    "description": "Farm-fresh organic carrots",
+    "price": 1.99,
+    "category": "Vegetables",
+    "image": "carrots.jpg",
+    "quantity": 150
+  },
+  {
+    "id": "3",
+    "name": "Free-range Eggs",
+    "description": "Local farm fresh eggs",
+    "price": 4.99,
+    "category": "Dairy",
+    "image": "eggs.jpg",
+    "quantity": 200
+  },
+  {
+    "id": "4",
+    "name": "Whole Milk",
+    "description": "Organic whole milk from local dairy",
+    "price": 3.99,
+    "category": "Dairy",
+    "image": "milk.jpg",
+    "quantity": 75
+  },
+  {
+    "id": "5",
+    "name": "Fresh Spinach",
+    "description": "Organic baby spinach leaves",
+    "price": 2.49,
+    "category": "Vegetables",
+    "image": "spinach.jpg",
+    "quantity": 80
+  }
+]

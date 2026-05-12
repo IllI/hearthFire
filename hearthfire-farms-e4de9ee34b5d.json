@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "hearthfire-farms",
+  "private_key_id": "e4de9ee34b5def5f48d9605caa9291e4b0399f2b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCjLs4z2XKAA+C8\n7lDTvYigb3uic9yIjV+5d6X2whVgGEYxxeBsfkcrQ7pXUHGL+UMzeX0ib/tz9Wt+\n2HUlSpI7eEnJUZkvG0hdUZpYhuKTM8kJyn7ZoqbuSIhsZyM5LkKIT4fo+koDW9vj\n3Wk+H6YJCcwHkxn2zmz/GotuskZY0+0s/nWsJYM3A6oKf6CeXU/F+fZhKl4wSGN6\n8eM8Tyr+7P1hhS8nHiRGSZB597XXj+whViWhTROV+1dXEBXB51A6d+v+pWRzBAtK\n0ACi/1et2S4fwi7G2sF+DzKb8j4cjTd4a4eeof1taft97g2KnZnUa5omafCVtuO6\n64B7ZPPNAgMBAAECggEARLS80jzgRkEbu0CWHIjFQVOfGReyR3ZK0xKq+JngGR0v\nVN6NLvD+MxuplgDDRh2Vq1MgGkNO+pRfBcHKlQBwUITFgHOQTTKuBciJdXOZa0QX\nBb3SKf0fTt2QPyAvxvAQyEbAIRpc1kwzaZ38JVF6/Xw4AQpxGKbyYniBM4LxNo2b\nDr+rLU79jNat15OelHhDpeexSocRjvvyCuNHkpNA3ZsbvMnbx1WVdCUE3GG9T3aR\n4Ho7VS8U+TDwyR7UgM6WgA4x/QQ1dNGMdT7t6tTuCRK4RBFQ8yVadwpZqIp2BUTi\nzCrTUrctBCyMA0EJY0w4Tak4RbAw3CfmMmmWqdvt6wKBgQDmMBdHuMfpqgjv1bUd\nTRjklvtxb9LLqBOOhiVXpC6u/0y9o2c1qo9k/BulSJA+/OfThUa72CWXdz1Xm4CM\nStKGrkkNp8Ub8m+72dwmzSLkWllnAvx54nNe7v6TNR6OY2yKJN1zhQwZhcNwNqgw\nahY8kBZ/zl+as6WY1/fMMB7eYwKBgQC1ezqJ+F+69fK1u2icNVHxusj+zSDjxTmK\nO1Z9JoQCgqcr51AqW9/D74m5ggxdwtjPM1khNoJtMdJ/dyIQvpPo+CTireXNuRMt\nnzAwyWquYLLe6BknQcLQbw8hu9FBUEYPcMrDVqjcVfbzaVSQD11DClfI5H0mOcn7\nZfPzDXAkDwKBgQCelPcU5EplwkzR3iseeqTxpsqnheB1id+fSu+jB2taCGx4IYDT\nSiPr8HujTPCDVHzqDmGCvBB53x4Vov3WqR2Mx7lwfOqgrE8p3Zd768tkApKhEz+Z\nQNc2yfP8upXIhtqZ+XfPRBPn6W2RezY31H5pTuMRPb5DuAwX1oHS3DwH/QKBgF5b\nyw0Pid6woFhjL7oAczHHV1g8GXyz//3iak655utTOU43f9P2XvsGIcrFVl6tv4LE\nBPSi3d+ehv7lV13zaP45fxwpJJH5R4JyAWFsaD5wYrBJZ0KlC4DKLcjxWZSnAzZm\nA9bayQN+4t6ehmw8wNXpm8kFHBjy9RT0ZomaFBN7AoGAdLmuHFJw2aAidkxS70Ih\nJvafhEw3yjsdJXJdkjAORpFJQNNuYxQcjsEa8Tzz3PRBk712MjmvUhRBSn3r7pi7\npI6M6Nb6xKcq7U/BhYu6Ff6i/LINks7ymRB9dO+rgWXsEQDC1CyXoW/PmSxlZain\nLErbk73GCCCGlFaKA19sCB4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fbsvc@hearthfire-farms.iam.gserviceaccount.com",
+  "client_id": "101714337356119020198",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40hearthfire-farms.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

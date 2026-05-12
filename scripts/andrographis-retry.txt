@@ -1,0 +1,19 @@
+=== Final Retry (11 remaining) ===
+
+Processing: Andrographis
+  Wiki: https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Andrographis_paniculat...
+  Error: HTTP 429
+[SKIP] Chamomile already has image or not found
+[SKIP] Chicory, Wild Form already has image or not found
+[SKIP] Gotu Kola already has image or not found
+[SKIP] Hairy Woodmint already has image or not found
+[SKIP] Holy Basil, Temperate already has image or not found
+[SKIP] Holy Basil, Vana already has image or not found
+[SKIP] New Zealand Spinach already has image or not found
+[SKIP] Sorrel, Garden already has image or not found
+[SKIP] Spilanthes already has image or not found
+[SKIP] Wild Dagga already has image or not found
+
+=== DONE ===
+Success: 0 -> 
+Failed: 1 -> Andrographis

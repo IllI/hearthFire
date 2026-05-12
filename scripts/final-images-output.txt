@@ -1,0 +1,29 @@
+=== Final Image Fetcher ===
+Processing: Andrographis (Source: Andrographis paniculata)
+  Γ¥î Error: Status 404
+Processing: Lemongrass (Source: Cymbopogon citratus)
+  Γ£à Done: https://i.ibb.co/b5Cp8gTR/lemongrass.jpg
+Processing: Milkweed, Redring (Source: Asclepias variegata)
+  Γ£à Done: https://i.ibb.co/NdzTzX0v/milkweed-redring.jpg
+Processing: Common Madder (Source: Rubia tinctorum)
+  Γ£à Done: https://i.ibb.co/jvMzMGpY/common-madder.jpg
+Processing: Holy Basil, Vana (Source: Ocimum gratissimum)
+  Γ¥î Error: Status 429
+Processing: Chamomile (Source: Matricaria chamomilla)
+  Γ¥î Error: Status 429
+Processing: Gotu Kola (Source: Centella asiatica)
+  Γ¥î Error: Status 429
+Processing: Hairy Woodmint (Source: Blephilia hirsuta)
+  Γ¥î Error: Status 429
+Processing: Wild Dagga (Source: Leonotis leonurus)
+  Γ¥î Error: Status 429
+Processing: Holy Basil, Temperate (Source: Ocimum americanum)
+  Γ¥î Error: Status 429
+Processing: New Zealand Spinach (Source: Tetragonia tetragonioides)
+  Γ¥î Error: Status 429
+Processing: Chicory, Wild Form (Source: Cichorium intybus)
+  Γ¥î Not found on Wiki
+Processing: Spilanthes (Source: Acmella oleracea)
+  Γ¥î Error: Status 429
+Processing: Sorrel, Garden (Source: Rumex acetosa)
+  Γ¥î Not found on Wiki

@@ -1,0 +1,33 @@
+{
+  "VHlvY5OUTo": {
+    "code": "DELIVFREE",
+    "type": "shipping",
+    "value": 0,
+    "description": "Free Delivery",
+    "active": true,
+    "createdAt": {
+      "_seconds": 1743663412,
+      "_nanoseconds": 601000000
+    },
+    "updatedAt": {
+      "_seconds": 1743663412,
+      "_nanoseconds": 601000000
+    }
+  },
+  "nLawmTXfbu": {
+    "code": "STRIPETEST",
+    "description": "Test stripe",
+    "active": true,
+    "createdAt": {
+      "_seconds": 1744645806,
+      "_nanoseconds": 432000000
+    },
+    "expiryDate": null,
+    "type": "percentage",
+    "value": 99,
+    "updatedAt": {
+      "_seconds": 1744645998,
+      "_nanoseconds": 184000000
+    }
+  }
+}

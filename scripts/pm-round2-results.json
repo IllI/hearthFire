@@ -1,0 +1,30 @@
+{
+  "success": [
+    {
+      "name": "Mtn. Mint, Hoary",
+      "imgbbUrl": "https://i.ibb.co/93tfJW85/mtn-mint-hoary.jpg"
+    },
+    {
+      "name": "Sunflower, Early",
+      "imgbbUrl": "https://i.ibb.co/TB2ySn5F/sunflower-early.jpg"
+    },
+    {
+      "name": "Milkweed, Tall Green",
+      "imgbbUrl": "https://i.ibb.co/pBHrYbnv/milkweed-tall-green.jpg"
+    },
+    {
+      "name": "Yarrow, Colorful",
+      "imgbbUrl": "https://i.ibb.co/93tfJW85/mtn-mint-hoary.jpg"
+    }
+  ],
+  "failed": [
+    "Milkweed, Redring",
+    "Hairy Woodmint",
+    "Miners Lettuce",
+    "Chicory, Wild Form",
+    "Mullein",
+    "Motherwort",
+    "St. John's Wort",
+    "Wormwood"
+  ]
+}

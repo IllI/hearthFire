@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hearthfire Farms - Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c7744;
+            border-bottom: 2px solid #2c7744;
+            padding-bottom: 10px;
+        }
+        .card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hearthfire Farms - Static Test Page</h1>
+    
+    <div class="success">
+        ✅ If you can see this page, Firebase Hosting is working correctly!
+    </div>
+    
+    <div class="card">
+        <h2>Environment Information</h2>
+        <p><strong>Page:</strong> Static HTML test page</p>
+        <p><strong>Timestamp:</strong> <span id="timestamp"></span></p>
+    </div>
+    
+    <div class="card">
+        <h2>Next Steps</h2>
+        <p>Now that your hosting is working, you can:</p>
+        <ul>
+            <li>Deploy your Next.js static export</li>
+            <li>Configure Firebase Functions for API endpoints</li>
+            <li>Update client-side code to work with Firebase Functions</li>
+        </ul>
+    </div>
+
+    <p><a href="/">Back to Home</a></p>
+
+    <script>
+        // Add current timestamp
+        document.getElementById('timestamp').textContent = new Date().toISOString();
+    </script>
+</body>
+</html> 

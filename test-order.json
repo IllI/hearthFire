@@ -1,0 +1,26 @@
+{
+  "cart": [
+    {
+      "id": "1",
+      "name": "Test Product",
+      "price": 10,
+      "quantity": 1
+    }
+  ],
+  "deliveryInfo": {
+    "date": "2025-03-12T00:00:00.000Z",
+    "timeSlot": "morning",
+    "scheduleId": "2vhke9qq2g09u0401hudbgch6q",
+    "address": {
+      "street": "123 Test St",
+      "city": "Test City",
+      "state": "CA",
+      "zip": "12345"
+    },
+    "instructions": "Test instructions"
+  },
+  "subtotal": 10,
+  "deliveryFee": 5,
+  "tax": 1.2,
+  "total": 16.2
+} 

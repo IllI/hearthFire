@@ -1,0 +1,53 @@
+{
+  "images": {
+    "plantName": "images",
+    "normalizedName": "images",
+    "images": [
+      {
+        "fileName": "image1.jpg",
+        "webPath": "/images/plants/images/image1.jpg",
+        "fullPath": "C:\\Users\\cityz\\IllI\\play\\hearthFire\\public\\images\\plants\\images\\image1.jpg"
+      },
+      {
+        "fileName": "image1.jpg",
+        "webPath": "/images/plants/images/image1.jpg",
+        "fullPath": "C:\\Users\\cityz\\IllI\\play\\hearthFire\\public\\images\\plants\\images\\image1.jpg"
+      },
+      {
+        "fileName": "image1.jpg",
+        "webPath": "/images/plants/images/image1.jpg",
+        "fullPath": "C:\\Users\\cityz\\IllI\\play\\hearthFire\\public\\images\\plants\\images\\image1.jpg"
+      },
+      {
+        "fileName": "image1.jpg",
+        "webPath": "/images/plants/images/image1.jpg",
+        "fullPath": "C:\\Users\\cityz\\IllI\\play\\hearthFire\\public\\images\\plants\\images\\image1.jpg"
+      },
+      {
+        "fileName": "image1.jpg",
+        "webPath": "/images/plants/images/image1.jpg",
+        "fullPath": "C:\\Users\\cityz\\IllI\\play\\hearthFire\\public\\images\\plants\\images\\image1.jpg"
+      },
+      {
+        "fileName": "image1.jpg",
+        "webPath": "/images/plants/images/image1.jpg",
+        "fullPath": "C:\\Users\\cityz\\IllI\\play\\hearthFire\\public\\images\\plants\\images\\image1.jpg"
+      },
+      {
+        "fileName": "image1.jpg",
+        "webPath": "/images/plants/images/image1.jpg",
+        "fullPath": "C:\\Users\\cityz\\IllI\\play\\hearthFire\\public\\images\\plants\\images\\image1.jpg"
+      },
+      {
+        "fileName": "image1.jpg",
+        "webPath": "/images/plants/images/image1.jpg",
+        "fullPath": "C:\\Users\\cityz\\IllI\\play\\hearthFire\\public\\images\\plants\\images\\image1.jpg"
+      },
+      {
+        "fileName": "image1.jpg",
+        "webPath": "/images/plants/images/image1.jpg",
+        "fullPath": "C:\\Users\\cityz\\IllI\\play\\hearthFire\\public\\images\\plants\\images\\image1.jpg"
+      }
+    ]
+  }
+}

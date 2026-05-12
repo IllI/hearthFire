@@ -1,0 +1,22 @@
+# Plants Needing Images (1 total)
+
+This file contains a list of plants that need images, along with suggested prompts
+for generating them using free AI image generators like Microsoft Image Creator.
+
+## How to use Microsoft Image Creator:
+1. Visit https://copilot.microsoft.com/images/creator
+2. Sign in with your Microsoft account (free)
+3. Copy one of the prompts below and paste it into the prompt field
+4. Generate the image and download it
+5. Save the image to public/images/plants/[plant-name]/[plant-name].jpg
+
+## Plants and Prompts:
+
+### 1. Echinacea (Echinacea purpurea)
+Normalized name: echinacea
+Save to: public/images/plants/echinacea/echinacea.jpg
+Prompt:
+```
+A detailed, high-resolution photograph of Echinacea (Echinacea purpurea), showing the whole plant with flowers and foliage in natural sunlight against a blurred garden background. The image should be clear, realistic, and showcase the plant's distinctive features.
+```
+

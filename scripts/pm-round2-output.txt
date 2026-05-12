@@ -1,0 +1,50 @@
+=== Prairie Moon Image Crawler - Round 2 ===
+
+[1/12] Mtn. Mint, Hoary
+  Found: pycnanthemum-verticillatum-var.-pilosum-hairy-mountain-mint_main_238x360.jpg
+  ImgBB: https://i.ibb.co/93tfJW85/mtn-mint-hoary.jpg
+  Updated in DB!
+[2/12] Sunflower, Early
+  Found: helianthus-giganteus-tall-sunflower_main_238x360.jpg
+  ImgBB: https://i.ibb.co/TB2ySn5F/sunflower-early.jpg
+  Updated in DB!
+[3/12] Milkweed, Tall Green
+  Found: asclepias-viridiflora-short-green-milkweed_main_270x360.jpg
+  ImgBB: https://i.ibb.co/pBHrYbnv/milkweed-tall-green.jpg
+  Updated in DB!
+[4/12] Milkweed, Redring
+  Not found on Prairie Moon
+[5/12] Hairy Woodmint
+  Not found on Prairie Moon
+[6/12] Yarrow, Colorful
+  Found: pycnanthemum-verticillatum-var.-pilosum-hairy-mountain-mint_main_238x360.jpg
+  ImgBB: https://i.ibb.co/93tfJW85/mtn-mint-hoary.jpg
+  Updated in DB!
+[7/12] Miners Lettuce
+  Not found on Prairie Moon
+[8/12] Chicory, Wild Form
+  Not found on Prairie Moon
+[9/12] Mullein
+  Not found on Prairie Moon
+[10/12] Motherwort
+  Not found on Prairie Moon
+[11/12] St. John's Wort
+  Not found on Prairie Moon
+[12/12] Wormwood
+  Not found on Prairie Moon
+
+=== SUMMARY ===
+Success: 4
+  + Mtn. Mint, Hoary -> https://i.ibb.co/93tfJW85/mtn-mint-hoary.jpg
+  + Sunflower, Early -> https://i.ibb.co/TB2ySn5F/sunflower-early.jpg
+  + Milkweed, Tall Green -> https://i.ibb.co/pBHrYbnv/milkweed-tall-green.jpg
+  + Yarrow, Colorful -> https://i.ibb.co/93tfJW85/mtn-mint-hoary.jpg
+Failed: 8
+  - Milkweed, Redring
+  - Hairy Woodmint
+  - Miners Lettuce
+  - Chicory, Wild Form
+  - Mullein
+  - Motherwort
+  - St. John's Wort
+  - Wormwood

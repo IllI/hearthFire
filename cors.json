@@ -1,0 +1,21 @@
+[
+  {
+    "origin": [
+      "http://localhost:3000",
+      "http://localhost:3001",
+      "https://hearthfire-farm.web.app",
+      "https://hearthfire-farms.firebaseapp.com"
+    ],
+    "method": ["GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"],
+    "maxAgeSeconds": 3600,
+    "responseHeader": [
+      "Content-Type",
+      "Content-Length",
+      "Accept",
+      "Accept-Encoding",
+      "Authorization",
+      "X-Requested-With",
+      "Origin"
+    ]
+  }
+] 

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlanta Zipcode Helper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #336633;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow: auto;
+            max-height: 300px;
+        }
+        .button {
+            background-color: #336633;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .button:hover {
+            background-color: #264d26;
+        }
+        #status {
+            margin: 15px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .success {
+            background-color: #dff0d8;
+            color: #3c763d;
+        }
+        .error {
+            background-color: #f2dede;
+            color: #a94442;
+        }
+        #zipcodeData {
+            width: 100%;
+            height: 300px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Atlanta Zipcode Helper</h1>
+    
+    <div>
+        <h2>Current Zipcode Data</h2>
+        <p>Below is the current zipcode GeoJSON data being used for the zipcode map:</p>
+        <pre id="currentData">Loading current data...</pre>
+        
+        <button class="button" id="loadCurrentData">Load Current Data</button>
+    </div>
+    
+    <div>
+        <h2>Save Zipcode Data</h2>
+        <p>You can edit the GeoJSON data below and save it to update the zipcode map:</p>
+        <textarea id="zipcodeData"></textarea>
+        <button class="button" id="saveZipcodes">Save Zipcode Data</button>
+        <div id="status"></div>
+    </div>
+    
+    <div>
+        <h2>Instructions</h2>
+        <ol>
+            <li>Use the "Load Current Data" button to view the current zipcode data</li>
+            <li>Edit the data in the textarea as needed</li>
+            <li>Click "Save Zipcode Data" to update the system</li>
+        </ol>
+        <p>The data should be in GeoJSON format with properties including "zipcode", "name", and "isValid" flags.</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentDataElement = document.getElementById('currentData');
+            const zipcodeDataTextarea = document.getElementById('zipcodeData');
+            const statusElement = document.getElementById('status');
+            const loadButton = document.getElementById('loadCurrentData');
+            const saveButton = document.getElementById('saveZipcodes');
+            
+            // Function to load current data
+            function loadCurrentData() {
+                statusElement.innerHTML = '';
+                statusElement.className = '';
+                
+                fetch('/api/zipcodes')
+                    .then(response => response.json())
+                    .then(data => {
+                        const formattedData = JSON.stringify(data, null, 2);
+                        currentDataElement.textContent = formattedData;
+                        zipcodeDataTextarea.value = formattedData;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching zipcode data:', error);
+                        currentDataElement.textContent = 'Error loading data: ' + error.message;
+                        statusElement.innerHTML = 'Failed to load current data';
+                        statusElement.className = 'error';
+                    });
+            }
+            
+            // Function to save zipcode data
+            function saveZipcodeData() {
+                try {
+                    const data = JSON.parse(zipcodeDataTextarea.value);
+                    
+                    statusElement.innerHTML = 'Saving data...';
+                    statusElement.className = '';
+                    
+                    fetch('/api/save-zipcode-data', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Server returned status: ' + response.status);
+                        }
+                        return response.json();
+                    })
+                    .then(result => {
+                        statusElement.innerHTML = 'Data saved successfully!';
+                        statusElement.className = 'success';
+                        loadCurrentData(); // Reload the current data
+                    })
+                    .catch(error => {
+                        console.error('Error saving zipcode data:', error);
+                        statusElement.innerHTML = 'Error saving data: ' + error.message;
+                        statusElement.className = 'error';
+                    });
+                } catch (e) {
+                    statusElement.innerHTML = 'Invalid JSON format: ' + e.message;
+                    statusElement.className = 'error';
+                }
+            }
+            
+            // Set up event listeners
+            loadButton.addEventListener('click', loadCurrentData);
+            saveButton.addEventListener('click', saveZipcodeData);
+            
+            // Load data on page load
+            loadCurrentData();
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,204 @@
+{
+  "success": [
+    {
+      "name": "Spikenard",
+      "id": "0hmbSfftXfSeaUi5ByB9",
+      "imgbbUrl": "https://i.ibb.co/V0ykYPL8/spikenard.jpg"
+    },
+    {
+      "name": "Pale Purple Coneflower",
+      "id": "1XBsnKRrO61XdfdaKjRm",
+      "imgbbUrl": "https://i.ibb.co/93nmRMxg/pale-purple-coneflower.jpg"
+    },
+    {
+      "name": "Shrubby St. John's Wort",
+      "id": "CaFWC8vy7CviKLdAwugi",
+      "imgbbUrl": "https://i.ibb.co/SbJ8PWP/shrubby-st-john-s-wort.jpg"
+    },
+    {
+      "name": "New England Aster",
+      "id": "CjWjhqibpsVPv8LDGm06",
+      "imgbbUrl": "https://i.ibb.co/Xnt0JY6/new-england-aster.jpg"
+    },
+    {
+      "name": "Black Cohosh",
+      "id": "PYZ7kAOmzfIknc5WRXzI",
+      "imgbbUrl": "https://i.ibb.co/N2r2QxVR/black-cohosh.jpg"
+    },
+    {
+      "name": "Bradbury's Monarda",
+      "id": "Sb25JKwZI8mKw2wCxsqu",
+      "imgbbUrl": "https://i.ibb.co/Cpwg561f/bradbury-s-monarda.jpg"
+    },
+    {
+      "name": "Columbine",
+      "id": "XCl6vAwVPp9HmiqYYvZf",
+      "imgbbUrl": "https://i.ibb.co/twwjhwBP/columbine.jpg"
+    },
+    {
+      "name": "Dense Blazing Star",
+      "id": "dQqk3jQkd37pO0PxM1iT",
+      "imgbbUrl": "https://i.ibb.co/vvcHn1H5/dense-blazing-star.jpg"
+    },
+    {
+      "name": "Button Blazing Star",
+      "id": "kV600eDfSqxgXGGcw0LR",
+      "imgbbUrl": "https://i.ibb.co/vvcHn1H5/dense-blazing-star.jpg"
+    },
+    {
+      "name": "Spring Beauty",
+      "id": "rZ87guKL85MsnRPlBMZ0",
+      "imgbbUrl": "https://i.ibb.co/HLXH78Tj/spring-beauty.jpg"
+    },
+    {
+      "name": "Swamp Aster",
+      "id": "sFq9j1THo5hdFubCqY2L",
+      "imgbbUrl": "https://i.ibb.co/992rf9sz/swamp-aster.jpg"
+    },
+    {
+      "name": "Wood Betony",
+      "id": "sWTx852BQlZTIpuJOz4s",
+      "imgbbUrl": "https://i.ibb.co/CpPQTGQd/wood-betony.jpg"
+    },
+    {
+      "name": "White Wild Indigo",
+      "id": "zQGcgM297ftotEfk9tJu",
+      "imgbbUrl": "https://i.ibb.co/nqfqS5hf/white-wild-indigo.jpg"
+    }
+  ],
+  "failed": [
+    {
+      "name": "White Sage",
+      "reason": "No image found"
+    },
+    {
+      "name": "Narrow-Leaf Echinacea",
+      "reason": "No image found"
+    },
+    {
+      "name": "Motherwort",
+      "reason": "No image found"
+    },
+    {
+      "name": "Wormwood",
+      "reason": "No image found"
+    },
+    {
+      "name": "Milkweed, Tall Green",
+      "reason": "No image found"
+    },
+    {
+      "name": "Holy Basil, Krishna",
+      "reason": "No image found"
+    },
+    {
+      "name": "Miners Lettuce",
+      "reason": "No image found"
+    },
+    {
+      "name": "Yarrow, Colorful",
+      "reason": "No image found"
+    },
+    {
+      "name": "Holy Basil, Rama",
+      "reason": "No image found"
+    },
+    {
+      "name": "Andrographis",
+      "reason": "No image found"
+    },
+    {
+      "name": "Lambs Quarters",
+      "reason": "No image found"
+    },
+    {
+      "name": "Wild Dagga",
+      "reason": "No image found"
+    },
+    {
+      "name": "Ashwagandha",
+      "reason": "No image found"
+    },
+    {
+      "name": "Sunflower, Early",
+      "reason": "No image found"
+    },
+    {
+      "name": "St. John's Wort",
+      "reason": "No image found"
+    },
+    {
+      "name": "Red Aztec Spinach",
+      "reason": "No image found"
+    },
+    {
+      "name": "Holy Basil, Temperate",
+      "reason": "No image found"
+    },
+    {
+      "name": "Meadowsweet",
+      "reason": "No image found"
+    },
+    {
+      "name": "New Zealand Spinach",
+      "reason": "No image found"
+    },
+    {
+      "name": "Lemongrass",
+      "reason": "No image found"
+    },
+    {
+      "name": "Lobelia",
+      "reason": "No image found"
+    },
+    {
+      "name": "Chicory, Wild Form",
+      "reason": "No image found"
+    },
+    {
+      "name": "Milkweed, Redring",
+      "reason": "No image found"
+    },
+    {
+      "name": "Marshmallow",
+      "reason": "No image found"
+    },
+    {
+      "name": "Common Madder",
+      "reason": "No image found"
+    },
+    {
+      "name": "Holy Basil, Vana",
+      "reason": "No image found"
+    },
+    {
+      "name": "Spilanthes",
+      "reason": "No image found"
+    },
+    {
+      "name": "Chamomile",
+      "reason": "No image found"
+    },
+    {
+      "name": "Mtn. Mint, Hoary",
+      "reason": "No image found"
+    },
+    {
+      "name": "Gotu Kola",
+      "reason": "No image found"
+    },
+    {
+      "name": "Mullein",
+      "reason": "No image found"
+    },
+    {
+      "name": "Hairy Woodmint",
+      "reason": "No image found"
+    },
+    {
+      "name": "Sorrel, Garden",
+      "reason": "No image found"
+    }
+  ],
+  "skipped": []
+}

@@ -1,0 +1,6 @@
+id,name,description,price,category,image,quantity
+1,Fresh Apples,Crisp and juicy local apples,2.99,Fruits,apples.jpg,100
+2,Organic Carrots,Farm-fresh organic carrots,1.99,Vegetables,carrots.jpg,150
+3,Free-range Eggs,Local farm fresh eggs,4.99,Dairy,eggs.jpg,200
+4,Whole Milk,Organic whole milk from local dairy,3.99,Dairy,milk.jpg,75
+5,Fresh Spinach,Organic baby spinach leaves,2.49,Vegetables,spinach.jpg,80 
