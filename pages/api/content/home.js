@@ -35,6 +35,20 @@ export default async function handler(req, res) {
     const content = contentDoc.data();
     console.log('Home page content retrieved successfully');
 
+    // Sanitize image URLs: replace local /uploads/ paths (broken on Vercel) with defaults
+    const defaultImages = ['/images/farm-bg.jpg', '/images/farm-produce.jpg', '/images/delivery.jpg'];
+    const isLocalUpload = (url) => url && (url.startsWith('/uploads/') || url.startsWith('uploads/'));
+    
+    if (isLocalUpload(content.mainImage)) {
+      content.mainImage = defaultImages[0];
+    }
+    if (content.sections) {
+      content.sections = content.sections.map((section, i) => ({
+        ...section,
+        image: isLocalUpload(section.image) ? (defaultImages[i + 1] || defaultImages[1]) : section.image
+      }));
+    }
+
     return res.status(200).json({
       success: true,
       content
