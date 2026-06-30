@@ -5,6 +5,18 @@ import Link from 'next/link';
 import { format, addDays, parse, isValid, isBefore } from 'date-fns';
 import AddressAutocomplete from '../../../components/AddressAutocomplete';
 
+function parseScheduleDate(value) {
+  if (typeof value === 'string') {
+    const match = value.match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (match) {
+      const [, year, month, day] = match;
+      return new Date(Number(year), Number(month) - 1, Number(day), 12, 0, 0);
+    }
+  }
+
+  return new Date(value);
+}
+
 export default function DeliverySchedule() {
   return (
     <AdminRoute>
@@ -33,7 +45,7 @@ function ScheduleContent() {
       { time: '9am-12pm', id: 'morning', maxOrders: 2, available: true },
       { time: '1pm-5pm', id: 'afternoon', maxOrders: 3, available: true }
     ],
-    zipCodes: ['12345', '12346'],
+    zipCodes: [],
     location: '', // For pickup type
     locationDetails: null, // Store detailed address data
     cutoffTime: 12, // Hours before delivery
@@ -193,7 +205,7 @@ function ScheduleContent() {
   };
   
   const handleZipCodeChange = (e) => {
-    const zipCodes = e.target.value.split(',').map(zip => zip.trim());
+    const zipCodes = e.target.value.split(',').map(zip => zip.trim()).filter(Boolean);
     setNewSchedule(prev => ({
       ...prev,
       zipCodes
@@ -264,7 +276,7 @@ function ScheduleContent() {
     if (!isCorrectType) return false;
     
     if (!showPastEvents) {
-      const scheduleDate = new Date(schedule.date);
+      const scheduleDate = parseScheduleDate(schedule.date);
       const today = new Date();
       today.setHours(0, 0, 0, 0);
       return !isBefore(scheduleDate, today);
@@ -277,6 +289,8 @@ function ScheduleContent() {
     e.preventDefault();
     
     try {
+      const cleanZipCodes = newSchedule.zipCodes.map(zip => String(zip).trim()).filter(Boolean);
+
       // Basic validation
       if (!newSchedule.date) {
         alert('Please select a delivery date');
@@ -297,11 +311,6 @@ function ScheduleContent() {
       if (newSchedule.type === 'delivery') {
         if (newSchedule.slots.some(slot => !slot.maxOrders)) {
           alert('Please provide maximum orders for all slots');
-          return;
-        }
-        
-        if (newSchedule.zipCodes.length === 0) {
-          alert('Please provide at least one zip code for delivery');
           return;
         }
       } else if (newSchedule.type === 'pickup') {
@@ -325,7 +334,7 @@ function ScheduleContent() {
         : newSchedule.slots;     // For delivery, use all slots
       
       const scheduleData = {
-        date: deliveryDate.toISOString(),
+        date: newSchedule.date,
         type: newSchedule.type,
         slots: slotsToUse.map(slot => ({
           ...slot,
@@ -338,7 +347,7 @@ function ScheduleContent() {
       
       // Add type-specific fields
       if (newSchedule.type === 'delivery') {
-        scheduleData.zipCodes = newSchedule.zipCodes;
+        scheduleData.zipCodes = cleanZipCodes;
       } else if (newSchedule.type === 'pickup') {
         scheduleData.location = newSchedule.location;
         // Include location details for pickup schedules
@@ -547,7 +556,7 @@ function ScheduleContent() {
             { time: '9am-12pm', id: 'morning', maxOrders: 2, available: true },
             { time: '1pm-5pm', id: 'afternoon', maxOrders: 3, available: true }
           ],
-      zipCodes: ['12345', '12346'],
+      zipCodes: [],
       location: '',
       locationDetails: null,
       cutoffTime: 12,
@@ -636,10 +645,7 @@ function ScheduleContent() {
             
             <button
               onClick={() => {
-                setNewSchedule(prev => ({
-                  ...prev,
-                  type: activeTab
-                }));
+                resetForm();
                 setIsAddingSchedule(true);
               }}
               className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded flex items-center"
@@ -665,10 +671,7 @@ function ScheduleContent() {
               <p className="text-gray-500 text-lg">No {activeTab} schedules found.</p>
               <button
                 onClick={() => {
-                  setNewSchedule(prev => ({
-                    ...prev,
-                    type: activeTab
-                  }));
+                  resetForm();
                   setIsAddingSchedule(true);
                 }}
                 className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
@@ -683,7 +686,7 @@ function ScheduleContent() {
                   <div className="flex justify-between items-start">
                     <div>
                       <h3 className="font-semibold">
-                        {new Date(schedule.date).toLocaleDateString('en-US', {
+                        {parseScheduleDate(schedule.date).toLocaleDateString('en-US', {
                           weekday: 'long',
                           month: 'long',
                           day: 'numeric',
@@ -762,10 +765,10 @@ function ScheduleContent() {
       
       {/* Add Schedule Modal */}
       {isAddingSchedule && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-start sm:items-center justify-center p-2 sm:p-4 z-50 overflow-y-auto">
           <div 
             ref={modalRef}
-            className="bg-white rounded-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-lg w-full max-w-2xl max-h-[calc(100vh-1rem)] sm:max-h-[90vh] overflow-y-auto"
           >
             <div className="p-4 border-b sticky top-0 bg-white z-10 flex justify-between items-center">
               <h2 className="text-xl font-semibold">Create New {newSchedule.type === 'delivery' ? 'Delivery' : 'Pickup'} Schedule</h2>
@@ -815,13 +818,13 @@ function ScheduleContent() {
                     {newSchedule.type === 'delivery' ? 'Time Slots' : 'Pickup Window'}
                   </label>
                   {newSchedule.slots.map((slot, index) => (
-                    <div key={index} className="flex space-x-2 mb-2">
+                    <div key={index} className="grid grid-cols-1 sm:grid-cols-[1fr_7rem_11rem_auto] gap-2 mb-3">
                       <input
                         type="text"
                         placeholder={newSchedule.type === 'delivery' ? "Time (e.g. 9am-12pm)" : "Pickup hours (e.g. 9am-3pm)"}
                         value={slot.time}
                         onChange={(e) => handleSlotChange(index, 'time', e.target.value)}
-                        className={`shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${newSchedule.type === 'pickup' ? 'w-full' : 'flex-1'}`}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       />
                       {/* Only show max orders and availability for delivery schedules */}
                       {newSchedule.type === 'delivery' && (
@@ -831,13 +834,13 @@ function ScheduleContent() {
                             placeholder="Max Orders"
                             value={slot.maxOrders}
                             onChange={(e) => handleSlotChange(index, 'maxOrders', e.target.value)}
-                            className="shadow appearance-none border rounded w-20 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             min="1"
                           />
                           <select
                             value={slot.available.toString()}
                             onChange={(e) => handleSlotChange(index, 'available', e.target.value)}
-                            className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                           >
                             <option value="true">Available</option>
                             <option value="false">Not Available</option>
@@ -849,7 +852,7 @@ function ScheduleContent() {
                         <button
                           type="button"
                           onClick={() => removeSlot(index)}
-                          className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                          className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full sm:w-auto"
                         >
                           Remove
                         </button>
@@ -931,20 +934,20 @@ function ScheduleContent() {
                   ></textarea>
                 </div>
                 
-                <div className="flex justify-end">
+                <div className="flex flex-col-reverse sm:flex-row sm:justify-end gap-2">
                   <button
                     type="button"
                     onClick={() => {
                       setIsAddingSchedule(false);
                       resetForm();
                     }}
-                    className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2"
+                    className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full sm:w-auto"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full sm:w-auto"
                   >
                     Create Schedule
                   </button>
@@ -1162,4 +1165,4 @@ function CalendarSettingsPanel({ currentUser, onStatusChange }) {
       </form>
     </div>
   );
-} 
+}

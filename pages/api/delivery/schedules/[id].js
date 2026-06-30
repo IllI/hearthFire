@@ -16,6 +16,23 @@ async function requireAdmin(req, res) {
   return true;
 }
 
+function getScheduleDateKey(dateValue) {
+  if (!dateValue) return null;
+
+  if (typeof dateValue === 'string') {
+    const match = dateValue.match(/^(\d{4}-\d{2}-\d{2})/);
+    if (match) return match[1];
+  }
+
+  const date = new Date(dateValue);
+  if (Number.isNaN(date.getTime())) return null;
+  return date.toISOString().split('T')[0];
+}
+
+function cleanZipCodes(zipCodes) {
+  return (zipCodes || []).map(zip => String(zip).trim()).filter(Boolean);
+}
+
 export default async function handler(req, res) {
   const { id } = req.query;
   if (!id) return res.status(400).json({ error: 'Schedule ID is required' });
@@ -51,19 +68,20 @@ export default async function handler(req, res) {
       }
 
       const existingSchedule = scheduleFromRow(existingRow);
+      const scheduleType = req.body.type || existingSchedule.type;
       const nextSchedule = {
         ...existingSchedule,
         ...req.body,
         id,
-        type: req.body.type || existingSchedule.type,
-        date: req.body.date || existingSchedule.date,
+        type: scheduleType,
+        date: getScheduleDateKey(req.body.date || existingSchedule.date),
         slots: req.body.slots || existingSchedule.slots,
         timeSlots: req.body.timeSlots || req.body.slots || existingSchedule.timeSlots,
         notes: req.body.notes || existingSchedule.notes || '',
         cutoffTime: req.body.cutoffTime || existingSchedule.cutoffTime,
-        zipCodes: req.body.type === 'pickup' ? [] : (req.body.zipCodes || existingSchedule.zipCodes || []),
-        location: (req.body.type || existingSchedule.type) === 'pickup' ? (req.body.location || existingSchedule.location || '') : '',
-        locationDetails: (req.body.type || existingSchedule.type) === 'pickup'
+        zipCodes: scheduleType === 'pickup' ? [] : cleanZipCodes(req.body.zipCodes || existingSchedule.zipCodes),
+        location: scheduleType === 'pickup' ? (req.body.location || existingSchedule.location || '') : '',
+        locationDetails: scheduleType === 'pickup'
           ? (req.body.locationDetails || existingSchedule.locationDetails || {})
           : null
       };
@@ -116,6 +134,10 @@ export default async function handler(req, res) {
           await googleCalendar.deleteEvent(schedule.googleCalendarEventId);
         } catch (calendarError) {
           console.error('Error deleting Google Calendar event:', calendarError);
+          return res.status(502).json({
+            error: 'Failed to delete linked Google Calendar event',
+            message: calendarError.message
+          });
         }
       }
 

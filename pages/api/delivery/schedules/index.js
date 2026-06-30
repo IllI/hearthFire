@@ -38,8 +38,22 @@ function normalizeSchedule(schedule) {
   };
 }
 
+function getScheduleDateKey(dateValue) {
+  if (!dateValue) return null;
+
+  if (typeof dateValue === 'string') {
+    const match = dateValue.match(/^(\d{4}-\d{2}-\d{2})/);
+    if (match) return match[1];
+  }
+
+  const date = new Date(dateValue);
+  if (Number.isNaN(date.getTime())) return null;
+  return date.toISOString().split('T')[0];
+}
+
 function hasAvailableFutureSlot(schedule) {
-  const scheduleDate = new Date(schedule.date || schedule.scheduleDate);
+  const scheduleDateKey = getScheduleDateKey(schedule.date || schedule.scheduleDate);
+  const scheduleDate = scheduleDateKey ? new Date(`${scheduleDateKey}T12:00:00`) : new Date(NaN);
   if (Number.isNaN(scheduleDate.getTime()) || scheduleDate < new Date()) return false;
   return (schedule.slots || []).some(slot => slot.available && Number(slot.currentOrders || 0) < Number(slot.maxOrders || 999));
 }
@@ -101,8 +115,8 @@ async function getDeliverySchedules(req, res) {
 function processScheduleData(scheduleData) {
   if (!scheduleData.date) throw new Error('Date is required');
   if (!scheduleData.type) throw new Error('Schedule type is required');
-  if (scheduleData.type === 'delivery' && (!scheduleData.zipCodes || !Array.isArray(scheduleData.zipCodes))) {
-    throw new Error('Zip codes are required for delivery schedules');
+  if (scheduleData.type === 'delivery' && scheduleData.zipCodes && !Array.isArray(scheduleData.zipCodes)) {
+    throw new Error('Zip codes must be provided as a list');
   }
   if (scheduleData.type === 'pickup' && !scheduleData.location) {
     throw new Error('Location is required for pickup schedules');
@@ -127,9 +141,17 @@ function processScheduleData(scheduleData) {
     };
   });
 
+  const scheduleDate = getScheduleDateKey(scheduleData.date);
+  if (!scheduleDate) throw new Error('Invalid schedule date');
+
+  const zipCodes = scheduleData.type === 'delivery'
+    ? (scheduleData.zipCodes || []).map(zip => String(zip).trim()).filter(Boolean)
+    : [];
+
   return {
     ...scheduleData,
-    date: new Date(scheduleData.date).toISOString(),
+    date: scheduleDate,
+    zipCodes,
     slots,
     timeSlots: scheduleData.timeSlots || slots,
     notes: scheduleData.notes || scheduleData.note || '',
