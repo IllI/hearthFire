@@ -1,71 +1,12 @@
-import { getFirestore } from '../../../lib/firebase-admin';
+import { supabaseAdmin } from '../../../lib/supabase-admin';
 
-/**
- * API endpoint for fetching Home page content
- * GET /api/content/home - Returns the current Home page content from Firestore
- */
-export default async function handler(req, res) {
-  // Only allow GET requests
-  if (req.method !== 'GET') {
-    res.setHeader('Allow', ['GET']);
-    return res.status(405).json({
-      success: false,
-      error: `Method ${req.method} Not Allowed`
-    });
-  }
-
-  try {
-    // Use the async initialization function to ensure Firebase is ready
-    const firestore = await getFirestore();
-
-    console.log('Home API: Firebase Admin initialized, fetching content...');
-    // Now that Firebase is definitely initialized, fetch content
-    const contentDoc = await firestore.collection('content').doc('home').get();
-
-    if (!contentDoc.exists) {
-      console.log('Home page content document not found, returning default content');
-
-      return res.status(200).json({
-        success: true,
-        content: getDefaultHomeContent()
-      });
-    }
-
-    // Return the content from Firestore
-    const content = contentDoc.data();
-    console.log('Home page content retrieved successfully');
-
-    // Sanitize image URLs: replace local /uploads/ paths (broken on Vercel) with defaults
-    const defaultImages = ['/images/farm-bg.jpg', '/images/farm-produce.jpg', '/images/delivery.jpg'];
-    const isLocalUpload = (url) => url && (url.startsWith('/uploads/') || url.startsWith('uploads/'));
-    
-    if (isLocalUpload(content.mainImage)) {
-      content.mainImage = defaultImages[0];
-    }
-    if (content.sections) {
-      content.sections = content.sections.map((section, i) => ({
-        ...section,
-        image: isLocalUpload(section.image) ? (defaultImages[i + 1] || defaultImages[1]) : section.image
-      }));
-    }
-
-    return res.status(200).json({
-      success: true,
-      content
-    });
-  } catch (error) {
-    console.error('Error in home page content handler:', error);
-    console.error('Stack trace:', error.stack);
-
-    // Always return default content on error
-    return res.status(200).json({
-      success: true,
-      content: getDefaultHomeContent()
-    });
-  }
+function withTimeout(promise, ms) {
+  return Promise.race([
+    promise,
+    new Promise((_, reject) => setTimeout(() => reject(new Error('Supabase content read timed out')), ms))
+  ]);
 }
 
-// Helper function to get default home content
 function getDefaultHomeContent() {
   return {
     title: 'Fresh from Hearthfire Farm to Your Door',
@@ -78,8 +19,7 @@ function getDefaultHomeContent() {
     sections: [
       {
         title: 'Our Farm to Your Table',
-        content: `<p>Hearthfire Farm is committed to growing the highest quality organic produce using sustainable farming practices. We believe in connecting our community directly to the source of their food.</p>
-                   <p>Every vegetable and fruit we deliver is harvested at peak freshness, ensuring maximum flavor and nutritional value.</p>`,
+        content: `<p>Hearthfire Farm is committed to growing the highest quality organic produce using sustainable farming practices.</p>`,
         image: '/images/farm-produce.jpg',
         button: {
           text: 'View Our Products',
@@ -88,8 +28,7 @@ function getDefaultHomeContent() {
       },
       {
         title: 'Weekly Delivery & Pickup',
-        content: `<p>We offer convenient delivery options to select zip codes in our area, bringing farm-fresh produce directly to your doorstep.</p>
-                   <p>For those outside our delivery area, we have multiple pickup locations where you can collect your order at a time that works for you.</p>`,
+        content: `<p>We offer convenient delivery options to select zip codes in our area, bringing farm-fresh produce directly to your doorstep.</p>`,
         image: '/images/delivery.jpg',
         button: {
           text: 'Check Availability',
@@ -99,4 +38,57 @@ function getDefaultHomeContent() {
     ],
     lastUpdated: new Date().toISOString()
   };
-} 
+}
+
+function sanitizeHomeContent(content) {
+  const defaultImages = ['/images/farm-bg.jpg', '/images/farm-produce.jpg', '/images/delivery.jpg'];
+  const isLocalUpload = (url) => url && (url.startsWith('/uploads/') || url.startsWith('uploads/'));
+  const sanitized = { ...content };
+
+  if (isLocalUpload(sanitized.mainImage)) {
+    sanitized.mainImage = defaultImages[0];
+  }
+
+  if (sanitized.sections) {
+    sanitized.sections = sanitized.sections.map((section, index) => ({
+      ...section,
+      image: isLocalUpload(section.image) ? (defaultImages[index + 1] || defaultImages[1]) : section.image
+    }));
+  }
+
+  return sanitized;
+}
+
+export default async function handler(req, res) {
+  if (req.method !== 'GET') {
+    res.setHeader('Allow', ['GET']);
+    return res.status(405).json({
+      success: false,
+      error: `Method ${req.method} Not Allowed`
+    });
+  }
+
+  try {
+    const { data, error } = await withTimeout(
+      supabaseAdmin
+        .from('content')
+        .select('data')
+        .eq('id', 'home')
+        .single(),
+      5000
+    );
+
+    if (error && error.code !== 'PGRST116') throw error;
+
+    return res.status(200).json({
+      success: true,
+      content: sanitizeHomeContent(data?.data || getDefaultHomeContent())
+    });
+  } catch (error) {
+    console.error('Error fetching home page content from Supabase:', error);
+    return res.status(200).json({
+      success: true,
+      content: getDefaultHomeContent()
+    });
+  }
+}

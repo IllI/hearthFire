@@ -1,62 +1,42 @@
-import { initAdminAsync } from '../../../lib/firebase-admin';
+import { supabaseAdmin } from '../../../lib/supabase-admin';
 
-/**
- * API endpoint for fetching metadata for all content pages
- * GET /api/content - Returns metadata for all content pages from Firestore
- */
+function withTimeout(promise, ms) {
+  return Promise.race([
+    promise,
+    new Promise((_, reject) => setTimeout(() => reject(new Error('Supabase content read timed out')), ms))
+  ]);
+}
+
 export default async function handler(req, res) {
-  // Only allow GET requests
   if (req.method !== 'GET') {
     res.setHeader('Allow', ['GET']);
-    return res.status(405).json({ 
-      success: false, 
-      error: `Method ${req.method} Not Allowed` 
+    return res.status(405).json({
+      success: false,
+      error: `Method ${req.method} Not Allowed`
     });
   }
 
   try {
-    // Initialize Firebase Admin asynchronously
-    console.log('Content API: Ensuring Firebase Admin is initialized...');
-    const admin = await initAdminAsync();
-    const firestore = admin.firestore();
-    
-    console.log('Content API: Firebase Admin initialized, fetching content...');
-    // Get a list of all documents in the content collection
-    const contentSnapshot = await firestore.collection('content').get();
-    
-    // If there are no content pages, return an empty array
-    if (contentSnapshot.empty) {
-      console.log('No content pages found in Firestore');
-      
-      return res.status(200).json({
-        success: true,
-        pages: []
-      });
-    }
-    
-    // Map the documents to page metadata objects
-    const contentPages = contentSnapshot.docs.map(doc => {
-      const data = doc.data();
-      return {
-        id: doc.id,
-        title: data.title,
-        lastUpdated: data.lastUpdated,
-        updatedBy: data.updatedBy || null
-      };
-    });
-    
-    console.log(`Retrieved ${contentPages.length} content pages from Firestore`);
-    
-    return res.status(200).json({
-      success: true,
-      pages: contentPages
-    });
+    const { data, error } = await withTimeout(
+      supabaseAdmin
+        .from('content')
+        .select('id,data,updated_at')
+        .order('id', { ascending: true }),
+      5000
+    );
+
+    if (error) throw error;
+
+    const pages = (data || []).map((row) => ({
+      id: row.id,
+      title: row.data?.title || row.id,
+      lastUpdated: row.data?.lastUpdated || row.updated_at,
+      updatedBy: row.data?.updatedBy || null
+    }));
+
+    return res.status(200).json({ success: true, pages });
   } catch (error) {
-    console.error('Error fetching content pages:', error);
-    
-    return res.status(500).json({
-      success: false,
-      error: 'Failed to fetch content pages'
-    });
+    console.error('Error fetching content pages from Supabase:', error);
+    return res.status(200).json({ success: true, pages: [] });
   }
-} 
+}
