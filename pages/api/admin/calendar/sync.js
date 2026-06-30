@@ -19,7 +19,6 @@ async function handler(req, res) {
       sixMonthsLater.toISOString()
     );
 
-    const rows = calendarSchedules.map(schedule => scheduleToRow(schedule, schedule.id || schedule.googleCalendarEventId));
     const { data: beforeRows, error: beforeError } = await supabaseAdmin
       .from('delivery_schedules')
       .select('id,google_calendar_event_id')
@@ -27,24 +26,55 @@ async function handler(req, res) {
 
     if (beforeError) throw beforeError;
 
-    const existingIds = new Set((beforeRows || []).map(row => row.google_calendar_event_id));
-    const { error: upsertError } = await supabaseAdmin
-      .from('delivery_schedules')
-      .upsert(rows)
-      .select();
+    const existingIdByEventId = new Map();
+    const duplicateIds = [];
 
-    if (upsertError) throw upsertError;
+    for (const row of beforeRows || []) {
+      if (!row.google_calendar_event_id) continue;
+
+      if (existingIdByEventId.has(row.google_calendar_event_id)) {
+        duplicateIds.push(row.id);
+      } else {
+        existingIdByEventId.set(row.google_calendar_event_id, row.id);
+      }
+    }
+
+    const rows = calendarSchedules.map(schedule => {
+      const eventId = schedule.googleCalendarEventId || schedule.id;
+      const rowId = existingIdByEventId.get(eventId) || eventId;
+
+      return scheduleToRow(
+        {
+          ...schedule,
+          id: rowId,
+          googleCalendarEventId: eventId,
+          isActive: true
+        },
+        rowId
+      );
+    });
+
+    const existingIds = new Set((beforeRows || []).map(row => row.google_calendar_event_id));
+    if (rows.length > 0) {
+      const { error: upsertError } = await supabaseAdmin
+        .from('delivery_schedules')
+        .upsert(rows)
+        .select();
+
+      if (upsertError) throw upsertError;
+    }
 
     const calendarEventIds = new Set(calendarSchedules.map(schedule => schedule.googleCalendarEventId).filter(Boolean));
     const staleIds = (beforeRows || [])
       .filter(row => row.google_calendar_event_id && !calendarEventIds.has(row.google_calendar_event_id))
       .map(row => row.id);
 
-    if (staleIds.length > 0) {
+    const idsToDelete = [...new Set([...staleIds, ...duplicateIds])];
+    if (idsToDelete.length > 0) {
       const { error: staleError } = await supabaseAdmin
         .from('delivery_schedules')
-        .update({ is_active: false, last_updated: new Date().toISOString() })
-        .in('id', staleIds);
+        .delete()
+        .in('id', idsToDelete);
 
       if (staleError) throw staleError;
     }
@@ -58,11 +88,11 @@ async function handler(req, res) {
         total: calendarSchedules.length,
         added,
         updated,
-        deleted: staleIds.length
+        deleted: idsToDelete.length
       },
       added,
       updated,
-      deleted: staleIds.length
+      deleted: idsToDelete.length
     });
   } catch (error) {
     console.error('Error syncing with Google Calendar:', error);

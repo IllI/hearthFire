@@ -120,31 +120,37 @@ export default async function handler(req, res) {
     if (!(await requireAdmin(req, res))) return;
 
     try {
-      const { data: existingRow } = await supabaseAdmin
+      const { data: existingRow, error: fetchError } = await supabaseAdmin
         .from('delivery_schedules')
         .select('*')
         .eq('id', id)
-        .single();
+        .maybeSingle();
 
-      if (!existingRow) return res.status(404).json({ error: 'Schedule not found' });
+      if (fetchError) throw fetchError;
 
-      const schedule = scheduleFromRow(existingRow);
-      if (schedule.googleCalendarEventId) {
+      const schedule = existingRow ? scheduleFromRow(existingRow) : null;
+      const calendarEventId = schedule?.googleCalendarEventId || id;
+      if (calendarEventId) {
         try {
-          await googleCalendar.deleteEvent(schedule.googleCalendarEventId);
+          await googleCalendar.deleteEvent(calendarEventId);
         } catch (calendarError) {
-          console.error('Error deleting Google Calendar event:', calendarError);
-          return res.status(502).json({
-            error: 'Failed to delete linked Google Calendar event',
-            message: calendarError.message
-          });
+          const message = calendarError.message || '';
+          const eventAlreadyGone = message.includes('notFound') || message.includes('Not Found') || message.includes('404');
+
+          if (!eventAlreadyGone) {
+            console.error('Error deleting Google Calendar event:', calendarError);
+            return res.status(502).json({
+              error: 'Failed to delete linked Google Calendar event',
+              message: calendarError.message
+            });
+          }
         }
       }
 
       const { error } = await supabaseAdmin
         .from('delivery_schedules')
         .delete()
-        .eq('id', id);
+        .or(`id.eq.${id},google_calendar_event_id.eq.${calendarEventId}`);
 
       if (error) throw error;
 

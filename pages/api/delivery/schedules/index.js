@@ -1,5 +1,6 @@
 import { randomUUID } from 'crypto';
 import googleCalendar from '../../../../lib/google-calendar';
+import { verifyAdminAccess } from '../../../../lib/admin-auth';
 import { supabaseAdmin } from '../../../../lib/supabase-admin';
 import { scheduleFromRow, scheduleToRow } from '../../../../lib/supabase-mappers';
 
@@ -58,57 +59,132 @@ function hasAvailableFutureSlot(schedule) {
   return (schedule.slots || []).some(slot => slot.available && Number(slot.currentOrders || 0) < Number(slot.maxOrders || 999));
 }
 
+async function requireAdmin(req, res) {
+  const auth = await verifyAdminAccess(req, res);
+  if (!auth.isAuthenticated) {
+    res.status(401).json({ error: 'Unauthorized' });
+    return false;
+  }
+  if (!auth.isAdmin) {
+    res.status(403).json({ error: 'Forbidden: Admin access required' });
+    return false;
+  }
+  return true;
+}
+
+function getCalendarWindow() {
+  const now = new Date();
+  const sixMonthsLater = new Date(now);
+  sixMonthsLater.setMonth(sixMonthsLater.getMonth() + 6);
+
+  return {
+    timeMin: now.toISOString(),
+    timeMax: sixMonthsLater.toISOString()
+  };
+}
+
+async function syncAvailabilityCache(calendarSchedules) {
+  const { data: beforeRows, error: beforeError } = await supabaseAdmin
+    .from('delivery_schedules')
+    .select('id,google_calendar_event_id')
+    .not('google_calendar_event_id', 'is', null);
+
+  if (beforeError) throw beforeError;
+
+  const existingIdByEventId = new Map();
+  const duplicateIds = [];
+
+  for (const row of beforeRows || []) {
+    if (!row.google_calendar_event_id) continue;
+
+    if (existingIdByEventId.has(row.google_calendar_event_id)) {
+      duplicateIds.push(row.id);
+    } else {
+      existingIdByEventId.set(row.google_calendar_event_id, row.id);
+    }
+  }
+
+  const calendarEventIds = new Set(
+    calendarSchedules
+      .map(schedule => schedule.googleCalendarEventId || schedule.id)
+      .filter(Boolean)
+  );
+
+  const staleIds = (beforeRows || [])
+    .filter(row => row.google_calendar_event_id && !calendarEventIds.has(row.google_calendar_event_id))
+    .map(row => row.id);
+
+  const rows = calendarSchedules.map(schedule => {
+    const eventId = schedule.googleCalendarEventId || schedule.id;
+    const rowId = existingIdByEventId.get(eventId) || eventId || randomUUID();
+
+    return scheduleToRow(
+      {
+        ...schedule,
+        id: rowId,
+        googleCalendarEventId: eventId,
+        isActive: true
+      },
+      rowId
+    );
+  });
+
+  if (rows.length > 0) {
+    const { error: upsertError } = await supabaseAdmin
+      .from('delivery_schedules')
+      .upsert(rows);
+
+    if (upsertError) throw upsertError;
+  }
+
+  const idsToDelete = [...new Set([...staleIds, ...duplicateIds])];
+  if (idsToDelete.length > 0) {
+    const { error: deleteError } = await supabaseAdmin
+      .from('delivery_schedules')
+      .delete()
+      .in('id', idsToDelete);
+
+    if (deleteError) throw deleteError;
+  }
+
+  return {
+    total: calendarSchedules.length,
+    upserted: rows.length,
+    deleted: idsToDelete.length
+  };
+}
+
 async function getDeliverySchedules(req, res) {
-  const syncWithCalendar = req.query.sync === 'true' || req.query.syncCalendar === 'true';
-  const skipCalendarCheck = req.query.skipCalendar === 'true';
+  const skipCalendarCheck = process.env.NODE_ENV === 'development' && req.query.skipCalendar === 'true';
 
   try {
-    const { data, error } = await supabaseAdmin
-      .from('delivery_schedules')
-      .select('*')
-      .eq('is_active', true)
-      .order('schedule_date', { ascending: true });
+    if (skipCalendarCheck) {
+      const { data, error } = await supabaseAdmin
+        .from('delivery_schedules')
+        .select('*')
+        .eq('is_active', true)
+        .order('schedule_date', { ascending: true });
 
-    if (error) throw error;
+      if (error) throw error;
 
-    let schedules = (data || []).map(scheduleFromRow).map(normalizeSchedule).filter(hasAvailableFutureSlot);
-
-    if (!skipCalendarCheck && (syncWithCalendar || schedules.length === 0)) {
-      try {
-        const now = new Date();
-        const sixMonthsLater = new Date();
-        sixMonthsLater.setMonth(sixMonthsLater.getMonth() + 6);
-
-        const calendarSchedules = await googleCalendar.getDeliverySchedulesFromCalendar(
-          now.toISOString(),
-          sixMonthsLater.toISOString()
-        );
-
-        if (calendarSchedules.length > 0) {
-          const rows = calendarSchedules.map(schedule => scheduleToRow(schedule, schedule.id || randomUUID()));
-          const { error: upsertError } = await supabaseAdmin
-            .from('delivery_schedules')
-            .upsert(rows);
-
-          if (upsertError) {
-            console.error('Error syncing calendar schedules to Supabase:', upsertError);
-          }
-
-          schedules = calendarSchedules.map(normalizeSchedule).filter(hasAvailableFutureSlot);
-        }
-      } catch (calendarError) {
-        console.error('Error fetching schedules from Google Calendar:', calendarError);
-      }
+      const cachedSchedules = (data || []).map(scheduleFromRow).map(normalizeSchedule).filter(hasAvailableFutureSlot);
+      return res.status(200).json(cachedSchedules.length ? cachedSchedules : createMockDeliverySchedules());
     }
 
-    if (schedules.length === 0 && process.env.NODE_ENV === 'development') {
-      schedules = createMockDeliverySchedules();
-    }
+    const { timeMin, timeMax } = getCalendarWindow();
+    const calendarSchedules = await googleCalendar.getDeliverySchedulesFromCalendar(timeMin, timeMax);
+    await syncAvailabilityCache(calendarSchedules);
 
+    const schedules = calendarSchedules.map(normalizeSchedule).filter(hasAvailableFutureSlot);
     return res.status(200).json(schedules);
   } catch (error) {
-    console.error('Error fetching delivery schedules from Supabase:', error);
-    return res.status(500).json({ error: 'Failed to fetch delivery schedules' });
+    console.error('Error fetching delivery schedules from Google Calendar:', error);
+
+    if (process.env.NODE_ENV === 'development') {
+      return res.status(200).json(createMockDeliverySchedules());
+    }
+
+    return res.status(502).json({ error: 'Failed to fetch availability from Google Calendar' });
   }
 }
 
@@ -161,26 +237,27 @@ function processScheduleData(scheduleData) {
 }
 
 async function createDeliverySchedule(req, res) {
-  try {
-    const scheduleId = randomUUID();
-    const schedule = {
-      ...processScheduleData(req.body),
-      id: scheduleId
-    };
+  if (!(await requireAdmin(req, res))) return;
 
-    try {
-      const calendarEvent = await googleCalendar.createAvailabilityEvent(schedule);
-      if (calendarEvent?.id) {
-        schedule.googleCalendarEventId = calendarEvent.id;
-      }
-    } catch (calendarError) {
-      console.error('Error creating Google Calendar event:', calendarError);
+  try {
+    const scheduleData = processScheduleData(req.body);
+    const calendarEvent = await googleCalendar.createAvailabilityEvent(scheduleData);
+
+    if (!calendarEvent?.id) {
+      throw new Error('Google Calendar did not return an event ID');
     }
+
+    const scheduleId = calendarEvent.id;
+    const schedule = {
+      ...scheduleData,
+      id: scheduleId,
+      googleCalendarEventId: calendarEvent.id
+    };
 
     const row = scheduleToRow(schedule, scheduleId);
     const { data, error } = await supabaseAdmin
       .from('delivery_schedules')
-      .insert(row)
+      .upsert(row)
       .select()
       .single();
 
