@@ -9,6 +9,7 @@ dist/
 .env.*
 !.env.example
 !.env.local.example
+project-d51a80b6-1f19-46c1-99c-*.json
 
 # Exclude uploads except for .gitkeep files
 public/uploads/*

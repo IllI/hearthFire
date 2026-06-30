@@ -30,6 +30,22 @@ export default function Schedule() {
     "30328", "30329", "30332", "30334", "30337", "30338", "30339", "30340", 
     "30341", "30342", "30344", "30345", "30346", "30354", "30360", "30363"
   ];
+
+  const parseCalendarDate = (value) => {
+    if (value?._seconds) {
+      return new Date(value._seconds * 1000);
+    }
+
+    if (typeof value === 'string') {
+      const datePart = value.split('T')[0];
+      if (/^\d{4}-\d{2}-\d{2}$/.test(datePart)) {
+        const [year, month, day] = datePart.split('-').map(Number);
+        return new Date(year, month - 1, day, 12, 0, 0);
+      }
+    }
+
+    return new Date(value);
+  };
   
   // Reference to the map component for zooming functionality
   const mapRef = useRef(null);
@@ -92,9 +108,7 @@ export default function Schedule() {
         // Add delivery schedules as events
         if (schedulesData && Array.isArray(schedulesData)) {
           schedulesData.forEach(schedule => {
-            const scheduleDate = schedule.date?._seconds 
-              ? new Date(schedule.date._seconds * 1000) 
-              : new Date(schedule.date);
+            const scheduleDate = parseCalendarDate(schedule.date);
               
             if (schedule.slots && Array.isArray(schedule.slots)) {
               schedule.slots.forEach(slot => {
@@ -127,9 +141,7 @@ export default function Schedule() {
           
           locationsData.pickupLocations.forEach(location => {
             try {
-              const locationDate = location.date?._seconds 
-                ? new Date(location.date._seconds * 1000) 
-                : new Date(location.date);
+              const locationDate = parseCalendarDate(location.date);
               
               // Format location data consistently
               const locationCoords = {
@@ -687,4 +699,4 @@ export default function Schedule() {
       )}
     </>
   );
-} 
+}
