@@ -1,7 +1,14 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../lib/firebase';
-import { getUserData, registerUser, loginUser, logoutUser, resetPassword } from '../services/authService';
+import {
+  checkIfNoUsers,
+  getCurrentAuthUser,
+  getUserData,
+  loginUser,
+  logoutUser,
+  onAuthStateChanged,
+  registerUser,
+  resetPassword
+} from '../services/authService';
 const AuthContext = createContext();
 
 const isBrowser = typeof window !== 'undefined';
@@ -44,14 +51,23 @@ export function AuthProvider({ children }) {
       }
     }
 
-    // Subscribe to auth state changes
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+    const loadInitialUser = async () => {
+      try {
+        const user = await getCurrentAuthUser();
+        await handleAuthUser(user);
+      } catch (error) {
+        console.error('Error loading auth session:', error);
+        setLoading(false);
+      }
+    };
+
+    const handleAuthUser = async (user) => {
       console.log('Auth state changed:', user ? user.email : 'No user');
 
       if (user) {
         setCurrentUser(user);
 
-        // Fetch additional user data from Firestore
+        // Fetch additional user profile data from Supabase
         try {
           const { success, data } = await getUserData(user.uid);
           if (success && data) {
@@ -74,7 +90,12 @@ export function AuthProvider({ children }) {
       }
 
       setLoading(false);
-    });
+    };
+
+    loadInitialUser();
+
+    // Subscribe to auth state changes
+    const unsubscribe = onAuthStateChanged(handleAuthUser);
 
     // Cleanup subscription on unmount
     return () => unsubscribe();
@@ -87,7 +108,7 @@ export function AuthProvider({ children }) {
       return { success: false, error: 'Invalid admin code' };
     }
 
-    const result = await registerUser(email, password, name, phone, role);
+    const result = await registerUser(email, password, name, phone, role, adminCode);
 
     if (result.success) {
       setCurrentUser(result.user);
@@ -150,6 +171,7 @@ export function AuthProvider({ children }) {
     login,
     logout,
     resetPassword: resetUserPassword,
+    checkIfNoUsers,
   };
 
   return (
